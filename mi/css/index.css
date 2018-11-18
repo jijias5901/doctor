@@ -1,0 +1,70 @@
+/*第一块*/
+.section{
+	height: 40px;
+	background: #333;
+}
+/*第一块左边导航*/
+.section .nav .nav-left{
+	float: left;
+	height: 40px;
+}
+.section .nav .nav-left .nav-left-li{
+	float: left;
+}
+.nav .nav-left .nav-left-li a{
+	line-height: 40px;
+	font-size: 9px;
+	color:#b0b0b0;
+}
+.nav .nav-left .nav-left-li:hover a{
+	color: #fff;
+}
+.section .nav .nav-left .nav-left-li span{
+	margin: 7px 7px;
+	font-size: 9px;
+	color: #363b40;
+}
+/*第一块右边购物车*/
+.section .nav .nav-right{
+	float: right;
+	width: 100px;
+	height: 40px;
+	background: blue;
+}
+/*第一块右边导航*/
+.section .nav .nav-right-l{
+	float: right;
+	width: 200px;
+	height: 40px;
+	background: green;
+}
+
+/*第二块*/
+.header{
+	height: 100px;
+	background: pink;
+}
+
+/*第三块*/
+.home{
+	height: 1272px;
+	background: blue;
+}
+
+/*第四块*/
+.main{
+	height: 2115px;
+	background: red;
+}
+
+/*第五块*/
+.footer{
+	height: 275px;
+	background: skyblue;
+}
+
+/*第六块*/
+.end{
+	height: 148px;
+	background: green;
+}
