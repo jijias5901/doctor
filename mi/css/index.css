@@ -328,6 +328,7 @@
 	height: 170px;
 	margin-top: 14px;
 	box-sizing: border-box;
+	margin-bottom: 25px;
 }
 .home .home-two .home-two-left{
 	width: 234px;
@@ -357,12 +358,6 @@
 	color: #fff;
 }
 
-.home .home-two .home-two-right{
-	width: 978px;
-	height: 170px;
-	float: right;
-	background: blue;
-}
 /*
 *竖线和横线
 */
@@ -385,19 +380,170 @@
 	background: #665e57;
 	margin: 0 9px;
 }
+.home .home-two .home-two-right{
+	float: right;
+}
 .home-two .home-two-right .home-two-right-img{
+	float: left;
+	width: 316px;
+	height: 170px;
+	margin-left: 15px;
 
 }
+.home-two .home-two-right .home-two-right-img a img{
+	height: 100%;
+}
+.home-two .home-two-right .home-two-right-img:first-child{
+	margin-left: 0;
+}
+.home-two .home-two-right .home-two-right-img:hover{
+	box-shadow: 0 8px 10px 5px #ddd;
+}
 
+.home-tree-head{
+	position: relative;
+	width: 100%;
+	height: 60px;	
+}
+.home-tree .home-tree-head h2{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -30px;
+	line-height: 60px;
+	font-size: 21px;
+	color: #333;
+}
+.home .home-tree .home-tree-head .home-tree-head-link{
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	text-align: center;
+}
+.home .home-tree .home-tree-head .home-tree-head-link a{
+	float: left;
+	width: 34px;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #e0e0e0;
+}
+.home .home-tree .home-tree-head .home-tree-head-link a:nth-child(2){
+	border-left: none;
+}
+.home .home-tree .home-tree-head .home-tree-head-link a:hover{
+	color: #ff6700;
+}
 
-
-
-
+.home-tree-content-time{
+	float: left;
+	width: 234px;
+	height: 340px;
+	background: #f1eded;
+	border-top: 1px solid red;
+	box-sizing: border-box;
+}
+.home .home-tree .home-tree-content .home-tree-content-time{
+	text-align: center;
+}
+.home .home-tree .home-tree-content .home-tree-content-time h2{
+	font-size: 20px;
+	color: #ff6700;
+	margin-top: 60px;
+}
+.home .home-tree .home-tree-content .home-tree-content-time img{
+	margin-top: 30px;
+}
+.home-tree .home-tree-content .home-tree-content-time .home-tree-content-time-ms{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color: #706f6f;
+	font-size: 13px;
+}
+.home-tree .home-tree-content .home-tree-content-time .time{
+	display: inline-block;
+	width: 46px;
+	height: 46px;
+	line-height: 46px;
+	background: #605751;
+	text-align: center;
+	font-size: 18px;
+	color: #fff;
+}
+.home-tree .home-tree-content .home-tree-content-time .mh{
+	color: #605751;
+	font-size: 16px;
+}
+.home-tree-content-sp{
+	float: right;
+	width: 978px;
+	height: 340px;
+}
+.home-tree .home-tree-content .home-tree-content-sp .sp-link{
+	float: left;
+	position: relative;
+	width: 234px;
+	height: 100%;
+	margin-left: 14px;
+	text-align: center;
+	background: #fafafa;
+	border-top: 1px solid yellow;
+	box-sizing: border-box;
+}
+.home-tree .home-tree-content .home-tree-content-sp .sp-link:first-child{
+	margin-left: 0px;
+}
+.home-tree-content .home-tree-content-sp .sp-link a img{
+	width: 113px;
+	height: 142px;
+	margin-top: 40px;
+}
+.home-tree-content .home-tree-content-sp .sp-link a h2{
+	margin-top: 40px;
+	font-size: 13px;
+	color: #202020;
+}
+.home-tree-content .home-tree-content-sp .sp-link a .ms{
+	margin-top: 10px;
+	color: #adadad;
+	font-size: 12px;
+}
+.home-tree-content .home-tree-content-sp .sp-link a .mey{
+	margin-top: 20px;
+	font-size: 13px;
+	color: #ff6700;
+}
+.home-tree-content .home-tree-content-sp .sp-link a .mey s{
+	color: #adadad;
+}
+.home-tree-content .home-tree-content-sp .sp-link .sp-lb{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -30px;
+	width: 60px;
+	height: 20px;
+	background: #e53935;
+	line-height: 20px;
+	color: #fff;
+	font-size: 12px;
+}
+.home .home-ad a img{
+	height: 120px;
+	margin-top: 40px;	
+}
 /*第四块*/
 .main{
 	height: 2115px;
 	background: red;
 }
+
+
+
+
+
+
+
+
 /*第五块*/
 .footer{
 	height: 275px;
