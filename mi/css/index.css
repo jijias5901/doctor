@@ -1,3 +1,22 @@
+.ad img{
+	height: 120px;	
+}
+.ad{
+	display: inline-block;
+	height: 120px;
+	margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
 /*第一块*/
 .section{
 	height: 40px;
@@ -432,6 +451,9 @@
 	color: #ff6700;
 }
 
+.home-tree{
+	margin-bottom: 40px;
+}
 .home-tree-content-time{
 	float: left;
 	width: 234px;
@@ -525,10 +547,7 @@
 	color: #fff;
 	font-size: 12px;
 }
-.ad a img{
-	height: 120px;
-	margin-top: 40px;	
-}
+
 /*第四块*/
 .main{
 	height: 2115px;
@@ -584,10 +603,10 @@
 }
 .content-sp .sp-link-m{
 	height: 303px;
-	transition: transform 0.3
+	transition: transform 0.5s,box-shadow 0.5s;
 }
 .content-sp .sp-link-m:hover{
-	transform: translateY(-1px);
+	transform: translateY(-2px);
 	box-shadow: 0 8px 10px 5px #ddd;
 }
 .content-sp .sp-link-m:nth-child(1),
@@ -603,13 +622,75 @@
 .content-sp .sp-link-m a .ms{
 	margin-bottom: -5px;
 }
-
-
-
-
-.appliances{
+.main .appliances .header-GM-link li{
+	float: left;
+	height: 30px;
+	margin-left: 15px;
+}
+.main .appliances .header-GM-link li:nth-child(1) .link-a{
+	color: #ff6700;
+	border-bottom: 2px solid #ff6700;
+}
+.main .appliances .header-GM-link li a{
+	font-size: 16px;
+	line-height: 30px;
+	text-align: center;
+}
+.main .appliances .header-GM-link li:hover .link-a{
+	color: #ff6700;
+	border-bottom: 2px solid #ff6700;
+}
+.main .appliances .appliances-ad{
+	float: left;
+	width: 234px;
+	height: 616px;
+	box-sizing: border-box;
+}
+.main .appliances .phone .appliances-ad .appliances-li:first-child{
+	margin-bottom: 10px;
+}
+.main .appliances .appliances-ad .appliances-li{
+	width: 234px;
+	height: 303px;
+}
+.main .appliances .phone .appliances-ad .appliances-li a img{
+	height: 303px;
+}
+.main .appliances .appliances-li{
+	transition: transform 0.5s,box-shadow 0.5s;
+}
+.main .appliances .appliances-ad .appliances-li:hover{
+	transform: translateY(-2px);
+	box-shadow: 0 8px 10px 5px #ddd;
+}
+.main .appliances .appliances-es{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 234px;
+	height: 303px;
+}
+.main .appliances .appliances-es div{
+	float: left;
+}
+.main .appliances .appliances-es .appliances-link{
+	width: 234px;
+	height: 145px;
+	margin-bottom: 13px;
+	background: yellow;
+}
+.main .appliances .appliances-es .appliances-link a img{
 
 }
+.main .appliances .appliances-es .appliances-browse{
+	width: 234px;
+	height: 145px;
+	background: red;
+}
+
+
+
+
 
 .video{
 
