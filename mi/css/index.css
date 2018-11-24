@@ -8,11 +8,91 @@
 }
 
 
-
-
-
-
-
+.content-sp{
+	float: right;
+	width: 978px;
+	height: 340px;
+}
+.content-sp .sp-link{
+	float: left;
+	position: relative;
+	width: 234px;
+	height: 100%;
+	margin-left: 14px;
+	text-align: center;
+	background: #fafafa;
+	border-top: 1px solid yellow;
+	box-sizing: border-box;
+}
+.content-sp .sp-link:first-child{
+	margin-left: 0px;
+}
+.content-sp .sp-link a img{
+	width: 113px;
+	height: 142px;
+	margin-top: 40px;
+}
+.content-sp .sp-link a h2{
+	margin-top: 40px;
+	font-size: 13px;
+	color: #202020;
+}
+.content-sp .sp-link a .ms{
+	margin-top: 10px;
+	color: #adadad;
+	font-size: 12px;
+}
+.content-sp .sp-link a .mey{
+	margin-top: 20px;
+	font-size: 13px;
+	color: #ff6700;
+}
+.content-sp .sp-link a .mey s{
+	color: #adadad;
+}
+.content-sp .sp-link .sp-lb{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -30px;
+	width: 60px;
+	height: 20px;
+	background: #e53935;
+	line-height: 20px;
+	color: #fff;
+	font-size: 12px;
+}
+.content-sp .sp-link .sp-link-key{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	background: #ff6700;
+	text-align: center;
+	padding: 15px 30px 15px 25px;
+	box-sizing: border-box;
+	opacity: 0;
+}
+.content-sp .sp-link .sp-link-key p{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.content-sp .sp-link .sp-link-key p:first-child{
+	display: inline-block;
+	width: 150px;
+	font-size: 14px;
+	color: #fff;
+}
+.content-sp .sp-link .sp-link-key p:nth-child(2){
+	display: inline-block;
+	color: #ccc;
+	font-size: 12px;
+}
+.content-sp .sp-link:hover .sp-link-key{
+	opacity: 1;
+}
 
 
 
@@ -493,60 +573,7 @@
 	color: #605751;
 	font-size: 16px;
 }
-.content-sp{
-	float: right;
-	width: 978px;
-	height: 340px;
-}
-.content-sp .sp-link{
-	float: left;
-	position: relative;
-	width: 234px;
-	height: 100%;
-	margin-left: 14px;
-	text-align: center;
-	background: #fafafa;
-	border-top: 1px solid yellow;
-	box-sizing: border-box;
-}
-.content-sp .sp-link:first-child{
-	margin-left: 0px;
-}
-.content-sp .sp-link a img{
-	width: 113px;
-	height: 142px;
-	margin-top: 40px;
-}
-.content-sp .sp-link a h2{
-	margin-top: 40px;
-	font-size: 13px;
-	color: #202020;
-}
-.content-sp .sp-link a .ms{
-	margin-top: 10px;
-	color: #adadad;
-	font-size: 12px;
-}
-.content-sp .sp-link a .mey{
-	margin-top: 20px;
-	font-size: 13px;
-	color: #ff6700;
-}
-.content-sp .sp-link a .mey s{
-	color: #adadad;
-}
-.content-sp .sp-link .sp-lb{
-	position: absolute;
-	top: 0;
-	left: 50%;
-	margin-left: -30px;
-	width: 60px;
-	height: 20px;
-	background: #e53935;
-	line-height: 20px;
-	color: #fff;
-	font-size: 12px;
-}
+
 
 /*第四块*/
 .main{
@@ -677,20 +704,66 @@
 	width: 234px;
 	height: 145px;
 	margin-bottom: 13px;
-	background: yellow;
+	background: #fafafa;
+	transition: transform 0.5s,box-shadow 0.5s;
 }
-.main .appliances .appliances-es .appliances-link a img{
-
+.main .appliances .appliances-es .appliances-link .link-img{
+	position: absolute;
+	top: 32px;
+	right: 16px;
+}
+.main .appliances .appliances-es .appliances-link div{
+	position: absolute;
+	top: 44px;
+	left: 30px;
+}
+.main .appliances .appliances-es .appliances-link div a p{
+	width: 100px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #333;
+} 
+.main .appliances .appliances-es .appliances-link div p{
+	color: #ff6700;
+	margin-top: 5px;
+}
+.main .appliances .appliances-es .appliances-link:hover{
+	transform: translateY(-2px);
+	box-shadow: 0 8px 10px 5px #ddd;
 }
 .main .appliances .appliances-es .appliances-browse{
+	position: relative;
 	width: 234px;
 	height: 145px;
-	background: red;
+	background: #fafafa;
+	transition: transform 0.5s,box-shadow 0.5s;
 }
-
-
-
-
+.main .appliances .appliances-es .appliances-browse a:first-child{
+	position: absolute;
+	top: 50px;
+	left: 30px;
+}
+.main .appliances .appliances-es .appliances-browse a h2{
+	margin-bottom: 5px;
+	font-size: 18px;
+	color: #333;
+}
+.main .appliances .appliances-es .appliances-browse a p{
+	color: #7d757d;
+	font-size: 12px;
+}
+.main .appliances .appliances-es .appliances-browse a:nth-child(2){
+	position: absolute;
+	top: 40px;
+	right: 30px;
+	color: #ff6700;
+	font-size: 48px;
+}
+.main .appliances .appliances-es .appliances-browse:hover{
+	transform: translateY(-2px);
+	box-shadow: 0 8px 10px 5px #ddd;
+}
 
 .video{
 
