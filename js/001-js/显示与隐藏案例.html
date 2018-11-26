@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="点击" id="btn">
+	<div id="box1">青青子衿</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox1 = document.getElementById('box1');
+
+	oBtn.onclick = function (){
+		if(oBox1.style.display == 'none'){
+			oBox1.style.display = 'block';
+			oBox1.style.width = '100px';
+			oBox1.style.height = '100px';
+			oBox1.style.background = 'red';
+			oBox1.style.textAlign = 'center';
+			
+		}else{
+			oBox1.style.display = 'none';
+			oBox1.style.width = '0px';
+			oBox1.style.height = '0px';
+			oBox1.style.background = 'none';
+		}
+	}
+
+</script>
+</html>
