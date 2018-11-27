@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" id="btn1" value="按钮1">
+	<input type="button" id="btn2" value="按钮2">
+	<div id="box1">哈哈哈哈哈哈</div>
+	<div id="box2">吼吼吼吼吼吼</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	oBtn1.onclick = function(){
+		if(oBox1.style.display == 'none'){
+			oBox1.style.display = 'block';
+		}else{
+			oBox1.style.display = 'none';
+		}
+	}
+	oBtn2.onclick = function(){
+		if(oBox2.style.display == 'none'){
+			oBox2.style.display = 'block';
+		}else{
+			oBox2.style.display = 'none';
+		}
+	}
+
+</script>
+</html>

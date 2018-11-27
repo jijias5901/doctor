@@ -789,12 +789,14 @@
 	margin-top: 40px;
 }
 .video .video-link .video-link-li{
+	position: relative;
 	float: left;
 	width: 296px;
 	height: 287px;
 	margin-left: 14px;
 	text-align: center;
 	background: #fff;
+	transition: transform 0.5s,box-shadow 0.5s;
 }
 .video .video-link .video-link-li:first-child{
 	margin-left: 0;
@@ -819,7 +821,29 @@
 .video .video-link .video-link-li a:nth-child(2) p:hover{
 	color: #ff6700;
 }
-
+.video .video-link .video-link-li .play{
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	display: inline-block;
+	width: 35px;
+	height: 25px;
+	background: #0e090c;
+	border: 2px solid #fff;
+	border-radius: 43%;
+}
+.video .video-link .video-link-li .play i{
+	color: #fff;
+	font-size: 25px;
+}
+.video .video-link .video-link-li .play:hover{
+	background: #ff6700;
+	border-color: #ff6700;
+}
+.video .video-link .video-link-li:hover{
+	transform: translateY(-2px);
+	box-shadow: 0 8px 10px 5px #ddd;
+}
 /*第五块*/
 .footer{
 	height: 275px;
