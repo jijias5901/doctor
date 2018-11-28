@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul li{
+			list-style: none;
+		}
+		#box1{
+			height: 50px;
+		}
+		#box1 li{
+			float: left;
+			margin-left: 20px;
+			font-size: 20px;
+		}
+		.Ty{
+			color: #ff6700;
+			border-bottom: 2px solid #ff6700;
+		}
+
+		#box2 li{
+			width: 200px;
+			height: 300px;
+			font-size: 50px;
+			border: 1px solid #000;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul id="box1">
+		<li class="Ty">热门</li>
+		<li>电视</li>
+		<li>电脑</li>
+		<li>家居</li>
+	</ul>
+	<ul id="box2">
+		<li style="display: block;">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var aBtn1 = oBox1.getElementsByTagName('li');
+	var aBtn2 = oBox2.getElementsByTagName('li');
+	for(i=0;i<aBtn1.length;i++){
+		aBtn1[i].index = i;
+
+		aBtn1[i].onclick = function(){
+			for(j=0;j<aBtn1.length;j++){
+				aBtn1[j].className = "";
+				aBtn2[j].style.display = 'none';
+			}
+			this.className = 'Ty';
+			aBtn2[this.index].style.display = 'block';
+		}
+	}
+
+	
+
+</script>
+</html>
