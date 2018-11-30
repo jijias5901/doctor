@@ -8,19 +8,49 @@
 			margin: 0;
 			padding: 0;
 		}
-		.box{
-			width: 300px;
+		#box{
+			width: 380px;
 			height: 600px;
 			margin: 100px auto;
 			border: 1px solid #000;
 			background: #ccc;
 		}
+		.clearfix:after{
+			display: block;
+			content: "";
+			clear: both;
+			height: 0;
+			visibility: hidden;
+		}
+		.clearfix{
+			*zoom: 1;
+		}
+		ul li{
+			float: left;
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			list-style: none;
+			margin-left: 20px;
+			margin-top: 20px;
+			background: #000;
+			color: #fff;
+			font-size: 20px;
+		}
+		#event{
+			margin: 20px 0 0 20px;
+		}
+		.Ty{
+			background: #fff;
+			color: #000;
+		}
 	</style>
 </head>
 <body>
-	<div class="box">
-		<ul>
-			<li>1</li>
+	<div id="box">
+		<ul class="clearfix">
+			<li class="Ty">1</li>
 			<li>2</li>
 			<li>3</li>
 			<li>4</li>
@@ -33,10 +63,27 @@
 			<li>11</li>
 			<li>12</li>
 		</ul>
-		<div class="box2">
+		<div id="event">
 			<h2>一月</h2>
 			<p>吃饭</p>
 		</div>
 	</div>	
 </body>
+<script>
+	var aBox = document.querySelectorAll('ul li');
+	var aEvent = document.getElementById('event');
+
+	for(var i = 0;i<aBox.length;i++){
+		aBox[i].onmouseover = function(){
+			
+			for(var j = 0;j<aBox.length;j++){
+				aBox[j].className = '';	
+			}
+			this.className = 'Ty'
+		}
+		aEvent
+
+	}
+	console.log(aBox);
+</script>
 </html>
