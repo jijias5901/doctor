@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			position: relative;
+			margin-top: 10px;
+		}
+		#son{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="点击生成">
+	<div id="box" class="box1">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var aSon = oBox.children;
+	var oVer = 6;
+	var oMargin = 15;
+	var oWidth = 100;
+	var oHeight = 100;
+	oBtn.onclick = function(){
+		var New1 = aSon[0].cloneNode(true);
+		oBox.appendChild(New1);
+		for(i = 0;i<aSon.length;i++){
+		var Line = i % oVer;
+		var Row = parseInt(i / oVer);
+		aSon[i].style.left = Line * (oWidth+oMargin) +'px';
+		aSon[i].style.top = Row * (oHeight+oMargin) +'px';
+	}
+	}
+	
+</script>
+</html>
