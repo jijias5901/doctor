@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;	
+		}
+		.slideshow{
+			width: 800px;
+			height: 450px;
+			margin: 100px auto;
+			border: 1px solid #000;
+			position: relative;
+			cursor: pointer;
+		}
+		.ul1 li{
+			width: 800px;
+			height: 450px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.ul1 li img{
+			width: 800px;
+			height: 450px;
+		}
+		span{
+			display: inline-block;
+			width: 30px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background: rgba(0,0,0,0.3);
+			color: #fff;
+			font-size: 25px;
+			font-weight: bold;
+			position: absolute;
+			top: 200px;
+			z-index: 999;
+		}
+		.span1{
+			left: 0;
+		}
+		.span2{
+			right: 0;
+		}
+		.ul2{
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			z-index: 888;
+		}
+		.ul2 li{
+			float: left;
+			width: 20px;
+			height: 20px;
+			background: #ddd;
+			margin-left: 20px;
+			border: 1px solid red;
+			border-radius: 50%;
+		}
+		.ac-bai{
+			background: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="slideshow">
+		<ul class="ul1">
+			<li style="z-index: 99"><a href="#">
+				<img src="1.jpg" alt="">
+			</a></li>
+			<li><a href="#">
+				<img src="2.jpg" alt="">
+			</a></li>
+			<li><a href="#">
+				<img src="3.jpg" alt="">
+			</a></li>
+		</ul>
+		<span class="span1">&lt;</span>
+		<span class="span2">&gt;</span>
+		<ul class="ul2">
+			<li class=".ac-bai"></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+<script>
+	var oLi = document.querySelectorAll('.ul1 li');
+	var oSpan1 = document.querySelector('.span1');
+	var oSpan2 = document.querySelector('.span2');
+	var oUl2 = document.querySelectorAll('.ul2 li');
+
+	var now = 0;
+	oSpan2.onclick = function(){
+		now++;
+		if(now >= oLi.length){
+			now = 0;
+		}
+		for(var i = 0;i < oLi.length;i++){
+			oLi[i].style.zIndex = '';
+		}
+		oLi[now].style.zIndex = '99';
+	}
+	oSpan1.onclick = function(){
+		now--;
+		if(now <= oLi.length){
+			now = now - 1 ;
+		}
+		for(var i = 0;i < oLi.length;i++){
+			oLi[i].style.zIndex = '';
+		}
+		oLi[now].style.zIndex = '99';
+	}
+</script>
+</html>

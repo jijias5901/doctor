@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		#box1{
+			float: left;
+			width: 300px;
+			height: 100px;
+			background: skyblue;
+		}
+		#box2{
+			float: left;
+			margin-left: 20px;
+			width: 300px;
+			height: 300px;
+			background: red;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var a = 0;
+	function oBlock(){
+		clearTimeout(a);
+		oBox2.style.display = 'block';
+	}
+	function oNone(){
+		a = setTimeout(function(){
+			oBox2.style.display = 'none';
+		},500)
+	}
+	oBox1.onmouseover = oBlock;
+	oBox1.onmouseout = oNone;
+	oBox2.onmouseover = oBlock;
+	oBox2.onmouseout = oNone;
+	/*
+	oBox1.onmouseover = function(){	
+		clearTimeout(a);
+		oBox2.style.display = 'block';
+	}
+	oBox1.onmouseout = 	function(){
+		a = setTimeout(function(){
+			oBox2.style.display = 'none';
+		},500)	
+	}
+	
+	oBox2.onmouseover = function(){	
+		clearTimeout(a);
+		oBox2.style.display = 'block';
+	}
+	oBox2.onmouseout = 	function(){
+		a = setTimeout(function(){
+			oBox2.style.display = 'none';
+		},500)
+	}
+	*/
+	
+	
+
+</script>
+</html>

@@ -28,8 +28,21 @@
 </body>
 <script>
 	var oBox = document.getElementById('box');
-	oBox.innerHTML = '抢购倒计时还有19小时22分钟55秒';
-	var oFtime = new Date('2018-12-7 12:00:00');
-	var oTimer = oFtime.getTime() - 
+	var oFtime = new Date('2018-12-8 19:00:00');
+	function Time(num){
+		return num < 10 ? "0" + num : "" + num;
+	}
+	
+	function Sp(){
+		var oTimer = oFtime.getTime() - Date.now();
+		var oSds = parseInt(oTimer / 1000);
+		var oHours = parseInt(oSds/3600);
+		var oMinutes = parseInt((oSds%3600)/60);
+		var oSeconds = (oSds%3600)%60 ;
+		oBox.innerHTML = '抢购倒计时还有' + Time(oHours) + '小时' + Time(oMinutes) + '分钟' + Time(oSeconds) + '秒';
+		// console.log(oBox);
+	}
+	setInterval(Sp,500);
+	Sp();
 </script>
 </html>
