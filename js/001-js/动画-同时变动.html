@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			opacity: 0.3;
+			margin-top: 10px;
+		}
+		.box{
+			width: 400px;
+			height: 400px;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div id="box1">变宽</div>
+		<div id="box2">变高</div>
+		<div id="box3">变色</div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+	var Time = 0;
+	oBox1.onmouseover = function(){
+		var ispeed = 10;
+		Time = setInterval(function(){
+			
+		},30)	
+	}
+</script>
+</html>

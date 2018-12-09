@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		#box2{
+			position: absolute;
+			top: 50px;
+			left: 600px;
+			width: 1px;
+			height: 600px;
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">向右移动</button>
+	<button id="btn1">向左移动</button>
+	<div id="box"></div>
+	<div id="box2"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var oBtn1 = document.getElementById('btn1');
+	var oTime = 0;
+	var oTimer = 0;
+	var a = 10;
+
+	function Right(){
+		clearInterval(oTimer);
+		oTimer = setInterval(function(){
+			if(oBox.offsetLeft < 0){
+					oBox.style.left = '0';
+				}
+			if(oBox.offsetLeft == 0){
+				clearInterval(oTimer);
+			}else{
+				oBox.style.left = oBox.offsetLeft - a +'px';
+			}
+
+		},50)
+	}
+	function Left(){
+		clearInterval(oTime);
+		oTime = setInterval(function(){
+			if(Math.abs(600 - oBox.offsetLeft) < Math.abs(a)){
+				oBox.style.left = '600px';	
+			}
+			if(oBox.offsetLeft == 600){
+				clearInterval(oTime);
+			}else{
+				oBox.style.left = oBox.offsetLeft + a +'px';
+			}
+
+			},50)
+	}
+
+	oBtn.onclick = Left;
+	oBtn1.onclick = Right;
+
+
+	// oBtn.onclick = function(){
+	// 	clearInterval(oTime);
+	// 		oTime = setInterval(function(){
+	// 			if(Math.abs(600 - oBox.offsetLeft) < Math.abs(a)){
+	// 				oBox.style.left = '600px';	
+	// 			}
+	// 			if(oBox.offsetLeft == 600){
+	// 				clearInterval(oTime);
+	// 			}else{
+	// 				oBox.style.left = oBox.offsetLeft + a +'px';
+	// 			}
+
+	// 		},50)
+	// }
+	// oBtn1.onclick = function(){
+	// 	clearInterval(oTimer);
+	// 	oTimer = setInterval(function(){
+	// 		if(oBox.offsetLeft < 0){
+	// 				oBox.style.left = '0';
+	// 			}
+	// 		if(oBox.offsetLeft == 0){
+	// 			clearInterval(oTimer);
+	// 		}else{
+	// 			oBox.style.left = oBox.offsetLeft - a +'px';
+	// 		}
+
+	// 	},50)
+	// }
+
+</script>
+</html>

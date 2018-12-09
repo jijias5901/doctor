@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<div id="box"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var oTime = 0;
+	var a = 10;
+	oBtn.onclick = function(){
+		var Pc = parseFloat(getComputedStyle(oBox,false)['opacity']);
+		Pc = Pc * 100;
+		clearInterval(oTime);
+		oTime = setInterval(function(){
+			// if( Pc < 100){
+			// 	oBox.style.opacity = '1';	
+			// }
+			if(Pc == 100){
+				clearInterval(oTime);
+				
+			}else{
+				oBox.style.opacity = '1';
+			}
+
+		},50)
+	}
+</script>
+</html>
