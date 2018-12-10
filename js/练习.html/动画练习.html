@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 800px;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		.box2{
+			position: absolute;
+			top: 50ox;
+			left: 400px;
+			width: 1px;
+			height: 400px;
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<div id="box"></div>
+	<div class="box2"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var Timer = 0;
+	oBtn.onclick = function(){
+		clearInterval(Timer);
+		iSpeed = 0;
+		Timer = setInterval(function(){
+			/*匀速运动
+			if(oBox.offsetLeft > 400){
+				iSpeed = -10;
+			}else{
+				iSpeed = 10;
+			}
+			*/
+			iSpeed = (400 - oBox.offsetLeft)/10;//减速
+			iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+			//if(Math.abs(400 - oBox.offsetLeft) < Math.abs(iSpeed)){
+			if(!iSpeed){
+				oBox.style.left = '400px';
+				clearInterval(Timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + iSpeed + 'px';	
+			}
+		},30)
+	}
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: #f00;
+			margin-top: 20px;
+			opacity: 0.3;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">变宽</div>
+	<div id="box2">变高</div>
+	<div id="box3">变色</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+	var Timer = 0;
+
+	function animate(){
+		clearInterval(Timer);
+		iSpeed = 0;
+		Timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(oBox,false)['opacity']);
+			current = Math.round(current * 100);
+			if(current > 100){
+				iSpeed = -10;
+			}else{
+				iSpeed = 10;
+			}
+			if(Math.abs(100 - current) < Math.abs(iSpeed)){
+				oBox.style.opacity = '1';
+				clearInterval(Timer);
+			}else{
+				oBox.style.opacity = (current + iSpeed)/100;	
+			}
+		},30)
+	}
+
+
+
+
+
+
+
+	oBox1.onmouseover = function(){
+		clearInterval(Timer);
+		iSpeed = 0;
+		Timer = setInterval(function(){
+			if(oBox1.offsetWidth > 300){
+				iSpeed = -10;
+			}else{
+				iSpeed = 10;
+			}
+			if(Math.abs(300 - oBox1.offsetWidth) < Math.abs(iSpeed)){
+				oBox1.style.width = '300px';
+				clearInterval(Timer);
+			}else{
+				oBox1.style.width = oBox1.offsetWidth + iSpeed + 'px';	
+			}
+		},30)
+	}
+	oBox3.onmouseover = function(){
+		clearInterval(Timer);
+		iSpeed = 0;
+		Timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(oBox,false)['opacity']);
+			current = Math.round(current * 100);
+			if(current > 100){
+				iSpeed = -10;
+			}else{
+				iSpeed = 10;
+			}
+			if(Math.abs(100 - current) < Math.abs(iSpeed)){
+				oBox.style.opacity = '1';
+				clearInterval(Timer);
+			}else{
+				oBox.style.opacity = (current + iSpeed)/100;	
+			}
+		},30)
+	}
+</script>
+</html>
