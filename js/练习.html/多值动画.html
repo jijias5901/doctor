@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: #f00;
+			opacity: 0.3;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="more-animation.js"></script>
+<script>
+	var oBox = document.getElementById('box');
+	oBox.onmouseover = function(){
+		animate()
+	}
+</script>
+</html>

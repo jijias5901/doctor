@@ -22,25 +22,29 @@
 	<div id="box2">变高</div>
 	<div id="box3">变色</div>
 </body>
+<script src="common-jiansu.js"></script>
 <script>
 	var oBox1 = document.getElementById('box1');
 	var oBox2 = document.getElementById('box2');
 	var oBox3 = document.getElementById('box3');
 	var Timer = 0;
+	oBox1.onmouseover = function(){
+		animate(oBox1,'width',300)
+	}
+	oBox2.onmouseover = function(){
+		animate(oBox2,'height',300)
+	}
 	oBox3.onmouseover = function(){
-		clearInterval(Timer);
-		iSpeed = 0;
-		Timer = setInterval(function(){
-			var current = parseFloat(getComputedStyle(oBox3,false)['opacity']);
-			current = Math.round(current * 100);
-			iSpeed = (100 - current)/10;//减速
-			iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
-			if(!iSpeed){
-				clearInterval(Timer);
-			}else{
-				oBox3.style.opacity = (current + iSpeed)/100;	
-			}
-		},30)
+		animate(oBox3,'opacity',100)
+	}
+	oBox1.onmouseout = function(){
+		animate(oBox1,'width',100)
+	}
+	oBox2.onmouseout = function(){
+		animate(oBox2,'height',100)
+	}
+	oBox3.onmouseout = function(){
+		animate(oBox3,'opacity',30)
 	}
 </script>
 </html>

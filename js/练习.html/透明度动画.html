@@ -32,9 +32,9 @@
 			var current = parseFloat(getComputedStyle(oBox,false)['opacity']);
 			current = Math.round(current * 100);
 			if(current > 100){
-				iSpeed = -10;
+				iSpeed = -3;
 			}else{
-				iSpeed = 10;
+				iSpeed = 3;
 			}
 			if(Math.abs(100 - current) < Math.abs(iSpeed)){
 				oBox.style.opacity = '1';
@@ -42,6 +42,7 @@
 			}else{
 				oBox.style.opacity = (current + iSpeed)/100;	
 			}
+			console.log(current,iSpeed);
 		},30)
 	}
 </script>

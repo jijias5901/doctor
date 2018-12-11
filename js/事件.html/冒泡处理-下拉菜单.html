@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 400px;
+			background-color: #f00;
+			margin-top: 20px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<div id="box"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	//点击出现
+	oBtn.addEventListener('click',function(){
+		oBox.style.display = 'block';
+		event.stopPropagation();
+	},false)
+	//点击菜单不让他消失
+	oBox.addEventListener('click',function(){
+		event.stopPropagation();
+	},false)
+	//点击别的地方消失
+	window.addEventListener('click',function(){
+		oBox.style.display = 'none';
+	},false);
+</script>
+</html>
