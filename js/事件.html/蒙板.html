@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#mas{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+			display: none;
+		}
+		#box{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -150px;
+			margin-top: -200px;
+			width: 300px;
+			height: 400px;
+			background-color: #fff;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<div id="mas"></div>
+	<div id="box">
+		<input type="text" id="txt">
+		<input type="button" id="btn1" value="登录">
+	</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var oMsa = document.getElementById('mas');
+	var oBtn1 = document.getElementById('btn1');
+</script>
+</html>

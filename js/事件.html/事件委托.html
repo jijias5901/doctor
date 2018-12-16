@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">添加</button>
+	<ul id="ul1">
+		<li id="li1">li1<a href="javaScript:;" class="del">删除</a></li>
+		<li id="li1">li2<a href="javaScript:;" class="del">删除</a></li>
+		<li id="li1">li3<a href="javaScript:;" class="del">删除</a></li>
+		<li id="li1">li4<a href="javaScript:;" class="del">删除</a></li>
+		<li id="li1">li5<a href="javaScript:;" class="del">删除</a></li>
+		<li id="li1">li6<a href="javaScript:;" class="del">删除</a></li>
+		<li id="li1">li7<a href="javaScript:;" class="del">删除</a></li>
+		<li id="li1">li8<a href="javaScript:;" class="del">删除</a></li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById('ul1');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = 'xxx';
+		var oA = document.createElement('a')
+		oA.innerHTML = '删除';
+		oA.href = "javaScript:;";
+		oA.className = "del";
+		oLi.appendChild(oA);
+		oUl.appendChild(oLi);
+	}
+	
+	oUl.addEventListener('click',function(ev){
+		if(ev.target.className == 'del'){
+			oUl.removeChild(ev.target.parentNode);
+		}
+		
+	},false)
+</script>
+</html>
