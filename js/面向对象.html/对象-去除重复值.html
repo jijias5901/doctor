@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [1,2,3,4,2,4,3,7,8];
+	var now =[];
+	var obj = {};
+	for(var i = 0;i < arr.length;i++){
+		obj[arr[i]]='';
+	}
+	for(key in obj){
+		now.push(key-'');
+	}
+	console.log(now)
+</script>
+</html>

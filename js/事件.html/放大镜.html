@@ -19,23 +19,40 @@
 			left: 0;
 			width: 450px;
 			height: 450px;
-			border: 1px solid #ccc;
-			background-color: red;
+			border: 1px solid #ccc;	
+		}
+		#bigbox #mask{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200px;
+			height: 200px;
+			display: none;
+			background-color: rgba(255,255,0,0.5);
 		}
 		#bigbox img{
-			
+			width: 450px;
+			height: 450px;
 		}
 		#ul1{
 			position: absolute;
-			top: 450px;
+			top: 455px;
 			left: 0;
-		}
-		#ul1 li{
-			float: left;
-			width: 451px;
+			width: 450px;
 			height: 45px;
+		}
+		ul li{
+			float: left;
+			width: 45px;
+			height: 45px;
+			margin-right: 10px;
+			opacity: 0.5;
 			list-style: none;
-			background: yellow;
+			cursor: pointer;
+		}
+		#ul1 li img{
+			width: 45px;
+			height: 45px;
 		}
 		#largebox{
 			position: absolute;
@@ -43,15 +60,23 @@
 			left: 452px;
 			width: 700px;
 			height: 700px;
-			background-color: skyblue;
+			display: none;
+			overflow: hidden;
+		}
+		#largebox img{
+			width: 900px;
+			height: 900px;
+		}
+		.active{
+			opacity: 1;
 		}
 	</style>
 </head>
 <body>
 	<div id="box">
 		<div id="bigbox">
+			<div id="mask"></div>
 			<img src="big1.jpg" alt="">
-			<span id="mask"></span>
 		</div>
 		<ul id="ul1">
 			<li class="active"><img src="big1.jpg" alt=""></li>
@@ -70,8 +95,30 @@
 	var oMask = document.getElementById('mask');
 	var oUl = document.getElementById('ul1');
 	var aImg = document.querySelectorAll('#ul1 img');
+	var aLi = oUl.querySelectorAll('#ul1 li');
 	var oLargebox = document.getElementById('largebox');
 	var oLargeImg = document.querySelector('#largebox img');
 
+	for(var i = 0;i < aLi.length;i++){
+		aLi[i].index = i;
+		aLi[i].onmouseenter = function(){
+			for(var j = 0;j<aLi.length;j++){
+				aLi[j].className = '';
+			}
+			this.className = 'active';
+			oBigImg.src = 'big' + (1+this.index) + '.jpg';
+			oLargeImg.src = 'big' + (1+this.index) + '.jpg';
+		}
+	}
+	oBigbox.onmouseenter = function(ev){
+		oMask.style.display = 'block';
+		oLargebox.style.display = 'block'; 
+		// oMask.style.left = ev.clientX - oMask.offsetLeft + 'px';
+		// oMask.style.top = ev.clientY - oMask.offsetTop + 'px';
+	}
+	oBigbox.onmouseleave = function(){
+		oMask.style.display = 'none';
+		oLargebox.style.display = 'none';
+	}
 </script>
 </html>

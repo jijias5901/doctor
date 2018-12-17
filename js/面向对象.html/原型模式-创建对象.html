@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function Create(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Create.prototype.sayHi = function(){
+			console.log('我的名字是:'+ name);
+		}
+		Create.prototype.sayAge = function(){
+			console.log('我今天:'+ age + '岁');
+		}
+
+		var preson = new Create('Tom',18);
+		console.log(preson.sayHi());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
