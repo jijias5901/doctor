@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+	</div>
+</body>
+<script>
+	function Carousel(opation){
+		//1.罗列属性
+		this.oBox = document.getElementById('box');
+		this.aImg = opation.aImg;
+		this.oUl = null;
+		//2.初始化DOM
+		this.init();
+	}
+	Carousel.prototype.init = function(){
+		this.oUl = document.createElement('ul');
+		for(var i = 0; i < this.aImg.length;i++){
+			var oLi = document.getElementById('li');
+		}
+		
+
+
+		this.oBox.appendChild(oUl);
+	}
+
+	new Carousel({
+		id:"box",
+		aImg:["big1.jpg","big2.jpg","big3.jpg"]
+	});
+</script>
+</html>

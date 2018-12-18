@@ -28,6 +28,7 @@
 			width: 200px;
 			height: 200px;
 			display: none;
+			cursor: move;
 			background-color: rgba(255,255,0,0.5);
 		}
 		#bigbox img{
@@ -64,8 +65,11 @@
 			overflow: hidden;
 		}
 		#largebox img{
-			width: 900px;
-			height: 900px;
+			width: 1600px;
+			height: 1600px;
+			position: absolute;
+			left: 0;
+			top: 0;
 		}
 		.active{
 			opacity: 1;
@@ -98,7 +102,7 @@
 	var aLi = oUl.querySelectorAll('#ul1 li');
 	var oLargebox = document.getElementById('largebox');
 	var oLargeImg = document.querySelector('#largebox img');
-
+	var timer = 0;
 	for(var i = 0;i < aLi.length;i++){
 		aLi[i].index = i;
 		aLi[i].onmouseenter = function(){
@@ -110,15 +114,35 @@
 			oLargeImg.src = 'big' + (1+this.index) + '.jpg';
 		}
 	}
-	oBigbox.onmouseenter = function(ev){
+	oBigbox.onmouseenter = function(){
 		oMask.style.display = 'block';
-		oLargebox.style.display = 'block'; 
-		// oMask.style.left = ev.clientX - oMask.offsetLeft + 'px';
-		// oMask.style.top = ev.clientY - oMask.offsetTop + 'px';
-	}
-	oBigbox.onmouseleave = function(){
+		oLargebox.style.display = 'block';
+		oMask.onmousemove = function(ev){
+			var l = ev.clientX - oBox.offsetLeft - oMask.offsetWidth * 0.5;
+			var t = ev.clientY - oBox.offsetTop - oMask.offsetHeight * 0.5;
+			if(l < 0){
+				l = 0;
+			}else if(l >= oBigbox.offsetWidth - oMask.offsetWidth){
+				l = oBigbox.offsetWidth - oMask.offsetWidth;
+			}
+			if(t >= oBigbox.offsetHeight - oMask.offsetHeight){
+				t = oBigbox.offsetHeight - oMask.offsetHeight;
+			}else if(t < 0){
+				t = 0;
+			}
+			oMask.style.left = l + 'px';
+			oMask.style.top = t + 'px';
+			var percentX = l / (oBigbox.offsetWidth - oMask.offsetWidth);
+			var percentY = t / (oBigbox.offsetHeight - oMask.offsetHeight);
+			
+			oLargeImg.style.left = percentX * (oLargebox.offsetWidth - oLargeImg.offsetWidth) + 'px';
+			oLargeImg.style.top = percentY * (oLargebox.offsetHeight - oLargeImg.offsetHeight) + 'px' ;
+		}	 
+		oBigbox.onmouseleave = function(){
 		oMask.style.display = 'none';
 		oLargebox.style.display = 'none';
+		}
 	}
+	
 </script>
 </html>
