@@ -7,6 +7,31 @@
 		*{
 			margin: 0;
 			padding: 0;
+			list-style: none;
+		}
+		.active{
+			position: absolute;
+			top: 50%;
+			margin-top: -30px;
+			width: 40px;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			font-size: 30px;
+			background-color: rgba(0,0,0,0.4);
+			color: #fff;
+			z-index: 99;
+			cursor: pointer;
+		}
+		.common{
+			float: left;
+			width: 20px;
+			height: 20px;
+			margin-right: 5px;
+			border: 3px solid #fff;
+			border-radius: 50%;
+			background-color: rgba(0,0,0,0.5);
+			cursor: pointer;
 		}
 	</style>
 </head>
@@ -17,26 +42,92 @@
 <script>
 	function Carousel(opation){
 		//1.罗列属性
-		this.oBox = document.getElementById('box');
+		this.oBox = document.getElementById(opation.id);
 		this.aImg = opation.aImg;
+		this.width = opation.width;
+		this.height = opation.height;
 		this.oUl = null;
-		//2.初始化DOM
+		this.oLi = null;
+		this.oImg = null;
+		this.oBottomUl = null;
+		this.oBottomLi = null;
+		//ul和li、img的生成，插入
 		this.init();
+		this.leftRightButton();
+		this.bottomButton();
+		//绑定事件
+		this.bindEvent();
 	}
 	Carousel.prototype.init = function(){
+		this.oBox.style.width = this.width + 'px';
+		this.oBox.style.height = this.height + 'px';
+		this.oBox.style.position = 'relative';
+		//生成ul
 		this.oUl = document.createElement('ul');
+		//下面三个按钮盒子
+		this.oBottomUl = document.createElement('ul');
 		for(var i = 0; i < this.aImg.length;i++){
-			var oLi = document.getElementById('li');
+			//生成li和img
+			this.oLi = document.createElement('li');
+			this.oImg = document.createElement('img');
+			//下面的三个按钮
+			this.oBottomLi = document.createElement('li');
+			this.oBottomLi.className = 'common';
+			this.oBottomUl.appendChild(this.oBottomLi);
+			//把img插入到li
+			this.oLi.appendChild(this.oImg);
+			//把li插入到ul
+			this.oUl.appendChild(this.oLi);
+			//设置img的属性
+			this.oImg.src = this.aImg[i];
+			this.oLi.style.width = this.width + 'px';
+			this.oLi.style.height = this.height +'px';
+			this.oImg.style.width = '100%';
+			this.oImg.style.height = '100%';
+			this.oLi.style.position = 'absolute';
+			this.oLi.style.left = 0;
+			this.oLi.style.top = 0;
+			//把第一张li的zindex提高
+			if(i == 0){
+				this.oUl.children[i].style.zIndex = 50;
+			}
 		}
-		
-
-
-		this.oBox.appendChild(oUl);
+		//把ul插入的盒子里
+		this.oBox.appendChild(this.oUl);
+		this.oBox.appendChild(this.oBottomUl);
 	}
+	Carousel.prototype.leftRightButton = function(){
+		//生成左右按钮
+		this.oLeftButton = document.createElement('span');
+		this.oRightButton = document.createElement('span');
+		//设置按钮属性
+		this.oLeftButton.className = 'active';
+		this.oLeftButton.style.left = 0;
+		this.oRightButton.className = 'active';
+		this.oRightButton.style.right = 0;
+		this.oLeftButton.innerHTML = '&lt;';
+		this.oRightButton.innerHTML = '&gt;';
+		//左右按钮插入到盒子
+		this.oBox.appendChild(this.oLeftButton);
+		this.oBox.appendChild(this.oRightButton);
+	}
+	Carousel.prototype.bottomButton = function(){
+		this.oBottomUl.style.position = 'absolute';
+		this.oBottomUl.style.left = '50%';
+		this.oBottomUl.style.marginLeft = -this.oBottomUl.offsetWidth * 0.5 + 'px';
+		this.oBottomUl.style.bottom = 10 + 'px';
+		this.oBottomUl.style.zIndex = 50;
+	}
+	Carousel.prototype.bindEvent = function(){
+		var _this = this;
+	}
+
 
 	new Carousel({
 		id:"box",
-		aImg:["big1.jpg","big2.jpg","big3.jpg"]
+		aImg:["big1.jpg","big2.jpg","big3.jpg"],
+		width:700,
+		height:400,
 	});
 </script>
 </html>

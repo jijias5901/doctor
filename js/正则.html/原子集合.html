@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id="btn">注册</button>
+	
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	
+	oBtn.onclick = function(){
+		var atr = oTxt.value;
+		var a = /1[3|5|7|8]\d{9}/;
+		if(a.test(atr)){
+			alert('注册成功');
+		}else{
+			alert('输入错误，请重新输入');
+		}
+	}
+	
+</script>
+</html>
