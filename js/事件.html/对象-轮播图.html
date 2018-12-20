@@ -22,6 +22,7 @@
 			color: #fff;
 			z-index: 99;
 			cursor: pointer;
+			user-select: none;
 		}
 		.common{
 			float: left;
@@ -51,6 +52,8 @@
 		this.oImg = null;
 		this.oBottomUl = null;
 		this.oBottomLi = null;
+		this.now = 0;
+		this.timer = 0;
 		//ul和li、img的生成，插入
 		this.init();
 		this.leftRightButton();
@@ -90,6 +93,7 @@
 			//把第一张li的zindex提高
 			if(i == 0){
 				this.oUl.children[i].style.zIndex = 50;
+				this.oBottomUl.children[i].style.borderColor = '#000';	
 			}
 		}
 		//把ul插入的盒子里
@@ -120,8 +124,37 @@
 	}
 	Carousel.prototype.bindEvent = function(){
 		var _this = this;
+		this.oRightButton.onclick = function(){
+			_this.now++;
+			if(_this.now >= _this.aImg.length){
+				_this.now = 0;
+			}
+			_this.tab();
+		}
+		this.oLeftButton.onclick = function(){
+			_this.now--;
+			if(_this.now < 0){
+				_this.now = _this.aImg.length - 1;
+			}
+			_this.tab();
+		}
+		for(var i = 0; i<this.oBottomUl.children.length;i++){
+			_this.oBottomUl.children[i].index = i;
+			this.oBottomUl.children[i].onclick = function(){
+				_this.now = this.index;
+				_this.tab();
+			}			
+		}
 	}
-
+	Carousel.prototype.tab = function(){
+		for(var i = 0;i<this.aImg.length;i++){
+		this.oUl.children[i].style.zIndex = 0;
+		this.oBottomUl.children[i].style.borderColor = 'rgba(0,0,0,0.5)';
+		}
+		this.oUl.children[this.now].style.zIndex = 50;
+		this.oBottomUl.children[this.now].style.borderColor = '#fff';
+	}
+	// Carousel.prototype.
 
 	new Carousel({
 		id:"box",
