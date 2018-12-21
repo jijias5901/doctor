@@ -40,6 +40,7 @@
 	<div id="box">
 	</div>
 </body>
+<script src="synthesize-animation.js"></script>
 <script>
 	function Carousel(opation){
 		//1.罗列属性
@@ -47,6 +48,7 @@
 		this.aImg = opation.aImg;
 		this.width = opation.width;
 		this.height = opation.height;
+		this.delayTime = opation.delayTime;
 		this.oUl = null;
 		this.oLi = null;
 		this.oImg = null;
@@ -60,6 +62,7 @@
 		this.bottomButton();
 		//绑定事件
 		this.bindEvent();
+		this.autoRun();
 	}
 	Carousel.prototype.init = function(){
 		this.oBox.style.width = this.width + 'px';
@@ -148,19 +151,30 @@
 	}
 	Carousel.prototype.tab = function(){
 		for(var i = 0;i<this.aImg.length;i++){
-		this.oUl.children[i].style.zIndex = 0;
-		this.oBottomUl.children[i].style.borderColor = 'rgba(0,0,0,0.5)';
+			this.oUl.children[i].style.zIndex = 0;
+			this.oUl.children[i].style.opacity = 0.3;
+			this.oBottomUl.children[i].style.borderColor = 'rgba(0,0,0,0.5)';
 		}
 		this.oUl.children[this.now].style.zIndex = 50;
+		animate(this.oUl.children[this.now],{opacity:100});
 		this.oBottomUl.children[this.now].style.borderColor = '#fff';
 	}
-	// Carousel.prototype.
-
+	Carousel.prototype.autoRun = function(){
+		var _this = this;
+		this.timer = setInterval(this.oRightButton.onclick,this.delayTime);
+		this.oBox.onmouseover = function(){
+			clearInterval(_this.timer);
+		}
+		this.oBox.onmouseout = function(){
+			_this.timer = setInterval(_this.oRightButton.onclick,_this.delayTime);
+		}
+	}
 	new Carousel({
 		id:"box",
 		aImg:["big1.jpg","big2.jpg","big3.jpg"],
 		width:700,
 		height:400,
+		delayTime:1500
 	});
 </script>
 </html>

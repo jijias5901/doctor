@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		#ul1 li{
+			float: left;
+			width: 80px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			cursor: pointer;
+		}
+		#ul2{
+			position: relative;
+		}
+		#ul2 li{
+			position: absolute;
+			top: 40px;
+			left: 0;
+			width: 320px;
+			height: 450px;
+			line-height: 450px;
+			font-size: 50px;
+			border: 1px solid #000;
+			color: #f00;
+			text-align: center;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul id="ul1">
+		<li style="color: #f00">热门</li>
+		<li>电视</li>
+		<li>电脑</li>
+		<li>家居</li>
+	</ul>
+	<ul id="ul2">
+		<li style="display: block;">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	function Tab(){
+		//罗列属性
+		this.oUl1 = document.getElementById('ul1');
+		this.oUl2 = document.getElementById('ul2');
+		//绑定事件
+		this.control();
+	}
+</script>
+</html>
