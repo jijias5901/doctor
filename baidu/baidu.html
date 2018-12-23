@@ -280,18 +280,45 @@
     </div>
 </body>
 <script>
+     //输入框清除按钮
+    function empty(obj){
+        var sVal = obj.value;
+        obj.nextElementSibling.style.display = 'block';
+        if(sVal == ''){
+            obj.nextElementSibling.style.display = 'none';
+        }
+    }
     var oForm = document.forms[0];
     var oUsername = oForm.username;
+    var oPhone = oForm.phone;
+    var oPassword = oForm.password;
+    var oVerify = oForm.verify;
+
     var aMsg = oForm.querySelectorAll('.msg');
-    console.log(aMsg[0]);
 
-
+    init();
+  
     oUsername.focus();
     aMsg[0].innerHTML = '设置后不可更改<br>中英文均可，最长14个英文或7个汉字';
-    aMsg[0].style.display = 'block';  
+    aMsg[0].style.display = 'block';
+    aMsg[0].className = 'tiptext';
 
-    oUsername. = function(){
-        console.log('a');
+    //初始化
+    function init(){
+        oUsername.oninput = function(){
+            empty(oUsername);
+        }
+        oPhone.oninput = function(){
+            empty(oPhone);
+        }
+        oPassword.oninput = function(){
+            empty(oPassword);
+        }
+         oVerify.oninput = function(){
+            empty(oVerify);
+        }
+        
     }
+    //用户名
 </script>
 </html>
