@@ -7,6 +7,49 @@
 	margin-top: 40px;
 }
 
+/*loading图标*/
+.loader{
+	position: relative;
+	width: 3px;
+	height: 20px;
+	background-color: #ff6700;
+	margin: 0 auto;
+	animation: loading 0.3s linear 0s infinite alternate;
+}
+.loader:before,.loader:after{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	content: '';
+	width: 3px;
+	height: 20px;
+	background-color: #ff6700;
+}
+.loader:before{
+	margin-left: -10px;
+	transform: scale(1,0.5);
+	animation: loading 0.3s linear 0.3s infinite alternate;
+}
+.loader:after{
+	margin-left: 10px;
+	transform: scale(1,0.5);
+	animation: loading 0.3s linear 0.5s infinite alternate;
+}
+@keyframes loading{
+	from{
+		opacity: 0.5;
+		transform: scale(1,0.5);
+	}
+	to{
+		opacity: 1;
+		transform: scale(1,1);
+	}
+}
+
+
+
+
 
 
 .header-GM{
@@ -148,7 +191,6 @@
 
 
 
-
 /*第一块*/
 .section{
 	height: 40px;
@@ -177,13 +219,9 @@
 }
 /*第一块右边购物车*/
 .section .nav .nav-right{
+	position: relative;
 	float: right;
-	width: 120px;
-	height: 40px;
-	background: #424242;
-	font-size: 12px;
-	text-align: center;
-	cursor: pointer;
+	
 }
 .section .nav .nav-right:hover{
 	background: #fff;
@@ -226,8 +264,45 @@
 .nav-right-content span{
 	margin: 0 5px 0 5px;
 }
+.nav-right-shoping{
+	position: relative;
+	width: 120px;
+	height: 40px;
+	font-size: 12px;
+	text-align: center;
+	background: #424242;
+	z-index: 999;
+	cursor: pointer;
+}
+#nav-right-shop{
+	position: absolute;
+	top: 40px;
+	right: 0;
+	width: 300px;
+	height: 0;
+	text-align: center;
+	z-index: 666;
+	overflow: hidden;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	background-color: #fff;
+}
+#nav-right-shop .loader{
+	margin-top: 40px;
+	display: none;
+}
+#nav-right-shop .empty-cart{
+	display: none;
+	margin-top: 40px;
+	font-size: 12px;
+}
+
+
+
+
+
 /*第二块*/
 .header{
+	position: relative;
 	height: 100px;
 }
 /*左边logo*/
@@ -248,9 +323,10 @@
 }
 .header .header-nav li{
 	float: left;
-	font-size: 15px;
+	font-size: 16px;
 	line-height: 100px;
-	margin-left: 23px;
+	padding: 0 12px;
+	cursor: pointer;
 }
 .header .header-nav li a{
 	color: #333;
@@ -258,6 +334,61 @@
 .header .header-nav li:hover a{
 	color: #ff6700;
 }
+/*header下拉菜单*/
+.header .header-nav-menu{
+	position: absolute;
+	top: 100px;
+	left: 0;
+	width: 100%;
+	height: 0px;
+	z-index: 999;
+	/*border-top: 1px solid #ddd;*/
+	box-sizing: border-box;
+	background-color: #fff;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.6);
+}
+.header .header-nav-menu li{
+	float: left;
+	position: relative;
+	width: 200px;
+	height: 100%; 
+	display: none;
+	text-align: center;
+}
+.header .header-nav-menu li .img-box{
+	width: 100%;
+	height: 100px;
+	margin-top: 30px;
+	border-right: 1px solid #ddd;
+}
+.header .header-nav-menu li .img-box img{
+	width: 100px;
+	height: 100%;
+}
+.header .header-nav-menu li .product-name{
+	margin-top: 15px;
+	font-size: 12px;
+	cursor: pointer;
+}
+.header .header-nav-menu li .product-price{
+	margin-top: 5px;
+	font-size: 11px;
+	color: #ff6700;
+}
+.header .header-nav-menu li .tag{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -33px;
+	margin-top: -1px;
+	width: 66px;
+	height: 20px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+	border: 1px solid #ff6700;
+}
+
 /*右边搜索框*/
 .header .header-search{
 	position: relative;
