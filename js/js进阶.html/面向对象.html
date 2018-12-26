@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function Fn(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Fn.prototype.LEGS = 2;
+
+
+		var fn = new Fn('Tom',18);
+
+		// fn.LEGS = 4;
+		console.log(fn)
+		console.log(fn.__proto__.LEGS === Fn.prototype.LEGS);
+
+		console.log(fn.LEGS);
+		var fn2 = new Fn('Leo',22);
+		console.log(fn2.LEGS);
+		console.log(Fn.prototype.LEGS)
+
+		// console.log(fn.__proto__.LEGS);
+		// console.log(fn.LEGS);
+		// console.log(fn.__proto__ === Fn.prototype);
+		// console.log(Fn.prototype.__proto__ === Object.prototype);
+		// console.log(Object.prototype.__proto__ === null);
+		// console.log(fn.__proto__.__proto__ === Object.prototype);
+		// console.log(fn.__proto__.constructor === Fn);
+
+
+
+	</script>
+</head>	
+<body>
+	
+</body>
+</html>

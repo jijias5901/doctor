@@ -29,17 +29,124 @@ var objData = [
 		}
 	]
 ]
+/*
+<ul>
+	<li>
+		<div>
+			<a href="">
+				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mix3-80.png?width=80&height=80" alt="">
+			</a>
+		</div>
+		<span>小米MIX 3</span>
+	</li>
+	<li>
+		<div>
+			<a href="">
+				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/qingchun-80.png?width=80&height=80" alt="">
+			</a>
+		</div>
+		<span>小米8 青春版</span>									
+	</li>
+	<li>
+		<div>
+			<a href="">
+				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/pingmu-80.png?width=80&height=80" alt="">
+			</a>
+		</div>
+		<span>小米8 屏幕指纹版</span>									
+	</li>
+	<li>
+		<div>
+			<a href="">
+				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" alt="">
+			</a>
+		</div>
+		<span>小米8</span>									
+	</li>
+	<li>
+		<div>
+			<a href="">
+				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/m8se-80.png?width=80&height=80" alt="">
+			</a>
+		</div>
+		<span>小米8 SE</span>
+	</li>
+	<li>
+		<div>
+			<a href="">
+				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mix2s80-80white.png?width=80&height=80" alt="">
+			</a>
+		</div>
+		<span>小米MIX 2S</span>
+	</li>	
+</ul>
+*/
+
+//模拟焦点选项卡数据
+var FocusTabData = [
+	[
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/mix3-80.png?width=80&height=80',
+			name:'小米MIX 3'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/qingchun-80.png?width=80&height=80',
+			name:'小米8 青春版'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/pingmu-80.png?width=80&height=80',
+			name:'小米8 屏幕指纹版'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80',
+			name:'小米8'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/m8se-80.png?width=80&height=80',
+			name:'小米8 SE'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/mix2s80-80white.png?width=80&height=80',
+			name:'小米MIX 2S'
+		}
+	],
+	[
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/mix3-80.png?width=80&height=80',
+			name:'小米MIX 3'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/qingchun-80.png?width=80&height=80',
+			name:'小米8 青春版'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/pingmu-80.png?width=80&height=80',
+			name:'小米8 屏幕指纹版'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80',
+			name:'小米8'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/m8se-80.png?width=80&height=80',
+			name:'小米8 SE'
+		},
+		{
+			src:'https://i1.mifile.cn/f/i/g/2015/cn-index/mix2s80-80white.png?width=80&height=80',
+			name:'小米MIX 2S'
+		}
+	],
+]
 
 
 
 
 
 
-
-
+//调用函数
 handleCart();
 handleNav();
-
+handleFocusTab();
 
 
 //获取购物车
@@ -78,27 +185,34 @@ function handleNav(){
 	for(var i = 0;i < aheaderNavLi.length;i++){
 		aheaderNavLi[i].index = i;
 		aheaderNavLi[i].onmouseenter = function(){
-			oheaderNavMenu.style.borderTop = '1px solid #ddd';
-			animate(oheaderNavMenu,{height:200},true,function(){
-				oheaderNavMenu.style.overflow = 'visible';
-			});
+			oBlock();
 			//调用模拟数据
 			database(this.index);
 		}
 		aheaderNavLi[i].onmouseleave = function(){
+			oNone();	
+		}	
+	}
+	oheaderNavMenu.onmouseenter = function(){
+		oBlock();
+	}
+	oheaderNavMenu.onmouseleave = function(){
+		oNone();
+	}
+	function oBlock(){
+		clearInterval(timer);
+		oheaderNavMenu.style.borderTop = '1px solid #ddd';
+		animate(oheaderNavMenu,{height:200},true,function(){	
+			oheaderNavMenu.style.overflow = 'visible';
+		});
+	}
+	function oNone(){
+		timer = setInterval(function(){
 			oheaderNavMenu.style.overflow = 'hidden';
 			animate(oheaderNavMenu,{height:0},true,function(){
 				oheaderNavMenu.style.borderTop = 'none';
 			});
-		}	
-	}
-	oheaderNavMenu.onmouseenter = function(){
-		oheaderNavMenu.style.overflow = 'visible';
-		oheaderNavMenu.style.borderTop = '1px solid #ddd';
-	}
-	oheaderNavMenu.onmouseleave = function(){
-		oheaderNavMenu.style.overflow = 'hidden';
-		oheaderNavMenu.style.borderTop = 'none';
+		},300);
 	}
 	//模拟数据
 	function database(index){
@@ -122,5 +236,9 @@ function handleNav(){
 		console.log(html);
 	}
 }
-
+//焦点选项卡
+function handleFocusTab(){
+	var aTab = document.querySelectorAll('.home .home-one-left .home-one-left-nav li');
+	
+}
 

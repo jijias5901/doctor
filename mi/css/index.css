@@ -12,6 +12,7 @@
 	position: relative;
 	width: 3px;
 	height: 20px;
+	/*display: none;*/
 	background-color: #ff6700;
 	margin: 0 auto;
 	animation: loading 0.3s linear 0s infinite alternate;
@@ -523,24 +524,66 @@
 	background: rgba(0,0,0,0.5);
 	box-sizing: border-box;
 }
-.home-one .home-one-left .home-one-left-nav li{
+.home-one .home-one-left .home-one-left-nav .conceal{
+	position: absolute;
+	top: 0;
+	left: 234px;
+	width: 0px;
+	height: 460px;
+	overflow: hidden;
+	background: #fff;
+	box-sizing: border-box;
+	border-top: 1px solid #ddd;
+	z-index: 888;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.home-one .home-one-left .home-one-left-nav .conceal ul{
+	float: left;
+}
+.home-one .home-one-left .home-one-left-nav .conceal li{
+	width: 234px;
+	height: 76px;'
+	text-align: center;
+	cursor: pointer;
+}
+.home-one .home-one-left .home-one-left-nav .conceal li div{
+	float: left;
+	margin-left: 20px;
+	margin-right: 10px;
+	width: 40px;
+	height: 40px;
+}
+.home-one .home-one-left .home-one-left-nav .conceal li img{
+	width: 40px;
+	height: 40px;
+	margin-top: 20px;
+}
+
+.home-one .home-one-left .home-one-left-nav .conceal li span{
+	float: left;
+	font-size: 13px;
+	color: #515151;
+	line-height: 76px;
+}
+
+.home-one .home-one-left .home-one-left-nav>ul li{
 	width: 100%;
 	height: 40px;
 	padding: 0 24px 0 30px;
 	cursor: pointer;
 	box-sizing: border-box;
 }
-.home-one .home-one-left .home-one-left-nav li a{
+.home-one .home-one-left .home-one-left-nav>ul li a{
 	line-height: 40px;
 	font-size: 14px;
 	color: #fff;
 }
-.home-one .home-one-left .home-one-left-nav li span{
+.home-one .home-one-left .home-one-left-nav>ul li span{
 	font-size: 12px;
 	color: #bbbab7;
 	float: right;
 }
-.home-one-left .home-one-left-nav li:hover{
+.home-one-left .home-one-left-nav>ul li:hover{
 	background: #ff6700;
 }
 .home-one-img{
