@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	用户名<input type="text" id="txt"><div id="box"></div>
+	密码<input type="password" id="pwd"><div id="box2"></div>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oPwd = document.getElementById('pwd');
+	var oBox = document.getElementById('box');
+	var oBox2 = document.getElementById('box2');
+	oTxt.oninput = function(){
+		var oTxtValue = oTxt.value;
+		var reg1 =/^[a-zA-z_]\w{2,7}$/;
+		if(reg1.test(oTxtValue)){
+			oBox.innerHTML = '用户名输入正确';
+		}else{
+			oBox.innerHTML = '用户名输入错误';
+		}
+	}
+	oPwd.oninput = function(){
+		var oPwdValue = oPwd.value;
+		var reg2 =/^[a-zA-z][a-zA-z\d]{7,10}$/;
+		if(reg2.test(oPwdValue)){
+			oBox2.innerHTML = '用户名输入正确';
+		}else{
+			oBox2.innerHTML = '用户名输入错误';
+		}
+	}
+</script>
+</html>
