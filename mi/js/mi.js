@@ -29,58 +29,6 @@ var objData = [
 		}
 	]
 ]
-/*
-<ul>
-	<li>
-		<div>
-			<a href="">
-				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mix3-80.png?width=80&height=80" alt="">
-			</a>
-		</div>
-		<span>小米MIX 3</span>
-	</li>
-	<li>
-		<div>
-			<a href="">
-				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/qingchun-80.png?width=80&height=80" alt="">
-			</a>
-		</div>
-		<span>小米8 青春版</span>									
-	</li>
-	<li>
-		<div>
-			<a href="">
-				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/pingmu-80.png?width=80&height=80" alt="">
-			</a>
-		</div>
-		<span>小米8 屏幕指纹版</span>									
-	</li>
-	<li>
-		<div>
-			<a href="">
-				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/m8-80.png?width=80&height=80" alt="">
-			</a>
-		</div>
-		<span>小米8</span>									
-	</li>
-	<li>
-		<div>
-			<a href="">
-				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/m8se-80.png?width=80&height=80" alt="">
-			</a>
-		</div>
-		<span>小米8 SE</span>
-	</li>
-	<li>
-		<div>
-			<a href="">
-				<img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mix2s80-80white.png?width=80&height=80" alt="">
-			</a>
-		</div>
-		<span>小米MIX 2S</span>
-	</li>	
-</ul>
-*/
 
 //模拟焦点选项卡数据
 var FocusTabData = [
@@ -147,6 +95,9 @@ var FocusTabData = [
 handleCart();
 handleNav();
 handleFocusTab();
+handSlideShow();
+handleCountDown();
+
 
 //获取购物车
 function handleCart(){
@@ -269,7 +220,8 @@ function handleFocusTab(){
 	}
 }
 //轮播图
-function Carousel(opation){
+function handSlideShow(){
+	function Carousel(opation){
 	//1.罗列属性
 	this.oBox = document.getElementById(opation.id);
 	this.aImg = opation.aImg;
@@ -290,8 +242,8 @@ function Carousel(opation){
 	//绑定事件
 	this.bindEvent();
 	this.autoRun();
-}
-Carousel.prototype.init = function(){
+	}
+	Carousel.prototype.init = function(){
 	this.oBox.style.width = this.width + 'px';
 	this.oBox.style.height = this.height + 'px';
 	this.oBox.style.position = 'relative';
@@ -329,14 +281,14 @@ Carousel.prototype.init = function(){
 	//把ul插入的盒子里
 	this.oBox.appendChild(this.oUl);
 	this.oBox.appendChild(this.oBottomUl);
-}
-Carousel.prototype.leftRightButton = function(){
+	}
+	Carousel.prototype.leftRightButton = function(){
 	//生成左右按钮
 	this.oLeftButton = document.createElement('span');
 	this.oRightButton = document.createElement('span');
 	//设置按钮属性
 	this.oLeftButton.className = 'active';
-	this.oLeftButton.style.left = 0;
+	this.oLeftButton.style.left = 234 + 'px';
 	this.oRightButton.className = 'active';
 	this.oRightButton.style.right = 0;
 	this.oLeftButton.innerHTML = '&lt;';
@@ -344,15 +296,15 @@ Carousel.prototype.leftRightButton = function(){
 	//左右按钮插入到盒子
 	this.oBox.appendChild(this.oLeftButton);
 	this.oBox.appendChild(this.oRightButton);
-}
-Carousel.prototype.bottomButton = function(){
+	}
+	Carousel.prototype.bottomButton = function(){
 	this.oBottomUl.style.position = 'absolute';
-	this.oBottomUl.style.left = '50%';
+	this.oBottomUl.style.right = 10 + 'px';
 	this.oBottomUl.style.marginLeft = -this.oBottomUl.offsetWidth * 0.5 + 'px';
 	this.oBottomUl.style.bottom = 10 + 'px';
 	this.oBottomUl.style.zIndex = 50;
-}
-Carousel.prototype.bindEvent = function(){
+	}
+	Carousel.prototype.bindEvent = function(){
 	var _this = this;
 	this.oRightButton.onclick = function(){
 		_this.now++;
@@ -375,8 +327,8 @@ Carousel.prototype.bindEvent = function(){
 			_this.tab();
 		}			
 	}
-}
-Carousel.prototype.tab = function(){
+	}
+	Carousel.prototype.tab = function(){
 	for(var i = 0;i<this.aImg.length;i++){
 		this.oUl.children[i].style.zIndex = 0;
 		this.oUl.children[i].style.opacity = 0.3;
@@ -385,8 +337,8 @@ Carousel.prototype.tab = function(){
 	this.oUl.children[this.now].style.zIndex = 50;
 	animate(this.oUl.children[this.now],{opacity:100});
 	this.oBottomUl.children[this.now].style.borderColor = '#fff';
-}
-Carousel.prototype.autoRun = function(){
+	}
+	Carousel.prototype.autoRun = function(){
 	var _this = this;
 	this.timer = setInterval(this.oRightButton.onclick,this.delayTime);
 	this.oBox.onmouseover = function(){
@@ -395,12 +347,37 @@ Carousel.prototype.autoRun = function(){
 	this.oBox.onmouseout = function(){
 		_this.timer = setInterval(_this.oRightButton.onclick,_this.delayTime);
 	}
-}
-new Carousel({
+	}
+	new Carousel({
 	id:"box",
-	aImg:["images/big1.jpg","images/big2.jpg","images/big3.jpg"],
+	aImg:["images/t1.jpg","images/t2.jpg","images/t3.jpg"],
 	width:1224,
 	height:460,
 	delayTime:3000
-});
-
+	});
+}
+//抢购倒计时
+function handleCountDown(){
+	var aTime = document.querySelectorAll('.home .home-tree .home-tree-content-time .time');
+	var oEndTime = new Date('2018-12-28 18:01:00');
+	var oClearTime = 0;
+	function timer(num){
+		return num < 10 ? "0" + num : "" + num;
+	}
+	function sp(){
+		var oTimer = oEndTime.getTime() - Date.now();
+		if(oTimer <= 0){
+			clearInterval(oClearTime);
+			oTimer = 0;	
+		}
+		var oSds = parseInt(oTimer / 1000);
+		var oHours = parseInt(oSds/3600);
+		var oMinutes = parseInt((oSds%3600)/60);
+		var oSeconds = (oSds%3600)%60 ;
+		aTime[0].innerHTML = timer(oHours);
+		aTime[1].innerHTML = timer(oMinutes);
+		aTime[2].innerHTML = timer(oSeconds);
+	}
+	oClearTime = setInterval(sp,500);
+	sp();
+}

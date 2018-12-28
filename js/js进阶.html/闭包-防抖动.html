@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(){
+		var i = 0;
+		function debounce(fn,wite){
+			var timer = 0;
+			return function(){
+				clearTimeout(timer);
+				timer = setTimeout(fn,wite);
+			}
+		}
+		window.onscroll = debounce(function(){
+			console.log(i++);
+		},500)
+	})();
+	
+
+</script>
+</html>

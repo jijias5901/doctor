@@ -40,7 +40,6 @@
 		var oMinutes = parseInt((oSds%3600)/60);
 		var oSeconds = (oSds%3600)%60 ;
 		oBox.innerHTML = '抢购倒计时还有' + Time(oHours) + '小时' + Time(oMinutes) + '分钟' + Time(oSeconds) + '秒';
-		// console.log(oBox);
 	}
 	setInterval(Sp,500);
 	Sp();
