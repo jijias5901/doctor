@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.active{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -100px;
+			margin-top: -140px;
+			width: 200px;
+			height: 280px;
+			background-color: #00f;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="登录">
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var obj = null;
+	function fn1(fn){
+		if(!obj){
+				obj = fn();
+			}
+			return obj;
+		// return function(){
+			
+		// }
+	}
+	function createDom(){
+		var oDiv = document.createElement('div');
+		oDiv.className = 'active';
+		document.body.appendChild(oDiv);
+	}
+	var fn2 = fn1(createDom);
+
+	oBtn.onclick = function(){
+		// fn2();
+	}
+</script>
+</html>

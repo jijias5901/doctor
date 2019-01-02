@@ -1,4 +1,4 @@
-//模拟下拉菜单数据
+//模拟下拉导航数据
 var objData = [
 	[
 		{
@@ -359,7 +359,7 @@ function handSlideShow(){
 //抢购倒计时
 function handleCountDown(){
 	var aTime = document.querySelectorAll('.home .home-tree .home-tree-content-time .time');
-	var oEndTime = new Date('2018-12-28 18:01:00');
+	var oEndTime = new Date('2019-1-3 18:01:00');
 	var oClearTime = 0;
 	function timer(num){
 		return num < 10 ? "0" + num : "" + num;
@@ -381,3 +381,4 @@ function handleCountDown(){
 	oClearTime = setInterval(sp,500);
 	sp();
 }
+//

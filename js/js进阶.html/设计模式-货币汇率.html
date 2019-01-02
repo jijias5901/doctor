@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <p>
+	人民币:<input type="text" id="txt">
+	</p>
+	<p>美元:</p>
+	<p>日元:</p> -->
+</body>
+<script>
+	(function(w){
+		function Renminbi(name){
+			this.name = name;
+			this.oP = null;
+			this.oInput = null;
+			this.foreigns = [];
+			this.init();
+		}
+		Renminbi.prototype = {
+			constructor:Renminbi,
+			init:function(){
+				this.oP = document.createElement('p');
+				this.oInput = document.createElement('input');				
+				document.body.appendChild(this.oP);
+				this.oP.innerHTML = this.name;
+				this.oP.appendChild(this.oInput);
+			},
+			register:function(foreign){
+				this.foreigns.push(foreign);
+			}
+
+		}
+		w.Renminbi = Renminbi;
+	})(window);
+
+	(function(w){
+		function Foreign(name){
+			this.name = name;
+			this.oP = null;
+			this.oSpan = null;
+			this.init();
+			R1.register(this);
+		}
+		Foreign.prototype = {
+			constructor:Renminbi,
+			init:function(){
+				this.oP = document.createElement('p');
+				this.oSpan = document.createElement('span');
+				this.oP.innerHTML = this.name;
+				this.oP.appendChild(this.oSpan);
+				document.body.appendChild(this.oP);
+			}
+		}
+		w.Foreign = Foreign;
+	})(window);
+
+	var R1 = new Renminbi('人民币:');
+	console.log(R1);
+	var F1 = new Foreign('美元:',R1);
+	var F2 = new Foreign('日元:',R1);
+</script>
+</html>

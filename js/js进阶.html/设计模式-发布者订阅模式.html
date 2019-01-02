@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(w){
+		function Teacher(name){
+			this.name = name;
+			this.students = [];
+		}
+		Teacher.prototype = {
+			constructor:Teacher,
+			register:function(student){
+				this.students.push(student);
+			},
+			publish:function(task){
+				for(var i = 0;i<this.students.length;i++){
+					this.students[i].receive(task);	
+				}
+			}
+		}
+		w.Teacher = Teacher;
+	})(window);
+
+	(function(w){
+		function Student(name,teacher){
+			this.name = name;
+			teacher.register(this);
+		}
+		Student.prototype = {
+			constructor:Student,
+			receive:function(task){
+				console.log(this.name + ' 的作业是：' + task);
+			}
+		}
+		w.Student = Student;
+	})(window);
+
+	var t1 = new Teacher('Tom');
+	console.log(t1);
+	var s1 = new Student('Leo',t1);
+	var s2 = new Student('Peter',t1);
+	t1.publish('打代码');
+</script>
+</html>
