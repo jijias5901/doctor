@@ -26,24 +26,24 @@
 <script>
 	var oBtn = document.getElementById('btn');
 	var obj = null;
-	function fn1(fn){
-		if(!obj){
+	function fn1(fn){		
+		return function(){
+			if(!obj){
 				obj = fn();
 			}
 			return obj;
-		// return function(){
-			
-		// }
+		}
 	}
 	function createDom(){
 		var oDiv = document.createElement('div');
 		oDiv.className = 'active';
 		document.body.appendChild(oDiv);
+		return oDiv;
 	}
 	var fn2 = fn1(createDom);
 
 	oBtn.onclick = function(){
-		// fn2();
+		fn2();
 	}
 </script>
 </html>

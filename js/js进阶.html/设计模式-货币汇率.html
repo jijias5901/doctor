@@ -19,6 +19,8 @@
 			this.oInput = null;
 			this.foreigns = [];
 			this.init();
+			this.publish();
+			this.bindEvent();
 		}
 		Renminbi.prototype = {
 			constructor:Renminbi,
@@ -31,6 +33,16 @@
 			},
 			register:function(foreign){
 				this.foreigns.push(foreign);
+			},
+			publish:function(){
+				for(var i = 0;i<this.foreigns.length;i++){
+						this.foreigns[i].conversion(this.oInput.value);
+					}
+			},
+			bindEvent:function(){
+				this.oInput.oninput = function(){
+					this.publish();
+				}.bind(this);
 			}
 
 		}
@@ -38,12 +50,13 @@
 	})(window);
 
 	(function(w){
-		function Foreign(name){
+		function Foreign(name,rate,local){
+			this.rate= rate;
 			this.name = name;
 			this.oP = null;
 			this.oSpan = null;
 			this.init();
-			R1.register(this);
+			local.register(this);
 		}
 		Foreign.prototype = {
 			constructor:Renminbi,
@@ -53,14 +66,18 @@
 				this.oP.innerHTML = this.name;
 				this.oP.appendChild(this.oSpan);
 				document.body.appendChild(this.oP);
+			},
+			conversion:function(val){
+				this.oSpan.innerHTML = val / this.rate;
 			}
+
 		}
 		w.Foreign = Foreign;
 	})(window);
 
 	var R1 = new Renminbi('人民币:');
 	console.log(R1);
-	var F1 = new Foreign('美元:',R1);
-	var F2 = new Foreign('日元:',R1);
+	var F1 = new Foreign('美元:',7,R1);
+	var F2 = new Foreign('日元:',0.064,R1);
 </script>
 </html>
