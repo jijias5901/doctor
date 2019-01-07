@@ -97,7 +97,7 @@ handleNav();
 handleFocusTab();
 handSlideShow();
 handleCountDown();
-
+handleSlide();
 
 //获取购物车
 function handleCart(){
@@ -381,4 +381,27 @@ function handleCountDown(){
 	oClearTime = setInterval(sp,500);
 	sp();
 }
-//
+//左右滑动菜单栏
+function handleSlide(){
+	var oUl = document.querySelector('.home-discounts-box');
+	var oI = document.querySelectorAll('.home-tree .header-T .header-link i');
+	console.log(oI[0]);
+	if(oUl.offsetLeft == 0){
+			oI[0].style.color = '#e0e0e0';
+	}
+	oI[0].onclick = function(){
+		oUl.style.left = 0;
+		if(oUl.style.left == 0){
+			console.log(oUl.style.left)
+			oI[0].style.color = '#b0b0b0';
+			oI[1].style.color = '#e0e0e0';
+		}		
+	}
+	oI[1].onclick = function(){
+		oUl.style.left = -978 + 'px';
+		if(oUl.style.left == '-978px'){
+			oI[0].style.color = '#b0b0b0';
+			oI[1].style.color = '#e0e0e0';
+		}
+	}
+}

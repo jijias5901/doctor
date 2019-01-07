@@ -843,6 +843,58 @@
 	font-size: 16px;
 }
 
+.home .home-tree .home-discounts{
+	position: relative;
+	float: right;
+	width: 978px;
+	height: 340px;
+	overflow: hidden;
+	/*background-color: #ff0;*/
+}
+.home .home-tree .home-discounts-box{
+	position: absolute;
+	left: 0;
+	top: 0;	
+	width: 1956px;
+	height: 340px;
+	transition: all 0.5s;
+}
+.home .home-tree .home-discounts-box li{
+	float: left;
+	width: 234px;
+	height: 340px;
+	margin-right: 14px;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 25px;
+	border-top: 1px solid #ffac13;
+	background-color: #fafafa;
+}
+.home .home-tree .home-discounts-box li:nth-child(4),
+.home .home-tree .home-discounts-box li:last-child
+{
+	margin-right: 0;
+}
+.home .home-tree .home-discounts-box li a h3{
+	font-size: 14px;
+	color: #202020;
+	margin-top: 18px;
+}
+.home .home-tree .home-discounts-box li a span{
+	font-size: 11px;
+	color: #adadad;
+}
+.home .home-tree .home-discounts-box li a p{
+	margin-top: 18px;
+}
+.home .home-tree .home-discounts-box li a p span{
+	color: #ff6700;
+	font-size: 14px;
+}
+.home .home-tree .home-discounts-box li a p del{
+	font-size: 14px;
+	column-count: #adadad;
+}
 
 /*第四块*/
 .main{
@@ -856,44 +908,33 @@
 	width: 234px;
 	height: 616px;
 }
-.main .home-tree-content-right{
-	position: relative;
+.main .phone .sp{
 	float: right;
 	width: 978px;
 	height: 616px;
 }
-.main .home-tree-content-right .right-sp{
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 1956px;
-	height: 616px;
-}
-.main .home-tree-content-right .right-sp .sp-link{
-	float: left;
-}
-.right-sp .sp-link:nth-child(5){
+.content-sp .sp-link:nth-child(5){
 	margin-left: 0px;
 }
-.right-sp .sp-link-m{
+.content-sp .sp-link-m{
 	height: 303px;
 	transition: transform 0.5s,box-shadow 0.5s;
 }
-.right-sp .sp-link-m:hover{
+.content-sp .sp-link-m:hover{
 	transform: translateY(-2px);
 	box-shadow: 0 8px 10px 5px #ddd;
 }
-.right-sp .sp-link-m:nth-child(1),
-.right-sp .sp-link-m:nth-child(2),
-.right-sp .sp-link-m:nth-child(3),
-.right-sp .sp-link-m:nth-child(4){
+.content-sp .sp-link-m:nth-child(1),
+.content-sp .sp-link-m:nth-child(2),
+.content-sp .sp-link-m:nth-child(3),
+.content-sp .sp-link-m:nth-child(4){
 	margin-bottom: 10px;
 }
 
-.right-sp .sp-link-m a img{
+.content-sp .sp-link-m a img{
 	margin-bottom: -20px;
 }
-.right-sp .sp-link-m a .ms{
+.content-sp .sp-link-m a .ms{
 	margin-bottom: -5px;
 }
 .main .appliances .header-GM-link{
