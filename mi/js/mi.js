@@ -86,7 +86,134 @@ var FocusTabData = [
 	],
 ]
 
-
+/*
+							<li class="sp-link sp-link-m">
+								<a href="#">
+									<img src="images/p1.jpg" alt="">
+									<h2>小米MIX 2 8GB+128GB 黑色</h2>
+									<p class="ms">Unibody 全陶瓷</p>
+									<p class="mey">3699 <span>元</span> <s>4699元</s></p>
+								</a>
+								<p class="sp-lb"><span>减</span> 800 <span>元</span></p>
+								<a class="sp-link-key" href="#">
+									<p>我竟然也有如此神奇的东西</p>
+									<p>来自与 哈哈 的评价</p>
+								</a>
+							</li>
+*/
+//模拟家电选项卡数据
+var ElectricData = [
+	[
+		{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+		{
+			top:{
+				url:"www.kuazhu.com",
+				name:"红米Note3",
+				price:"0.99元",
+				src:"images/ca.png"
+			},
+			bottom:{
+				url:"www.kuazhu.com",
+				name:"浏览更多",
+				content:"家居",
+				icon:"&#xe615;"
+			}
+		}
+	],
+	[],
+	[],
+	[]
+]
 
 
 
@@ -98,7 +225,7 @@ handleFocusTab();
 handSlideShow();
 handleCountDown();
 handleSlide();
-
+handleTabControl();
 //获取购物车
 function handleCart(){
 	var oShop = document.getElementById('nav-right-shop');
@@ -386,22 +513,68 @@ function handleSlide(){
 	var oUl = document.querySelector('.home-discounts-box');
 	var oI = document.querySelectorAll('.home-tree .header-T .header-link i');
 	console.log(oI[0]);
-	if(oUl.offsetLeft == 0){
-			oI[0].style.color = '#e0e0e0';
+	// if(oUl.offsetLeft == 0){
+	// 		oI[0].style.color = '#e0e0e0';
+	// }
+	// oI[0].onclick = function(){
+	// 	oUl.style.left = 0;
+	// 	if(oUl.style.left == 0){
+	// 		console.log(oUl.style.left)
+	// 		oI[0].style.color = '#b0b0b0';
+	// 		oI[1].style.color = '#e0e0e0';
+	// 	}		
+	// }
+	oI[1].onclick = function(){
+		oUl.style.left = -978 + 'px';
+		// if(oUl.style.left == '-978px'){
+		// 	oI[0].style.color = '#b0b0b0';
+		// 	oI[1].style.color = '#e0e0e0';
+		// }
 	}
 	oI[0].onclick = function(){
 		oUl.style.left = 0;
-		if(oUl.style.left == 0){
-			console.log(oUl.style.left)
-			oI[0].style.color = '#b0b0b0';
-			oI[1].style.color = '#e0e0e0';
+		// if(oUl.style.left == 0){
+		// 	console.log(oUl.style.left)
+		// 	oI[0].style.color = '#e0e0e0';
+		// 	oI[1].style.color = '#b0b0b0';
+		// }
+		console.log(oUl.style.left)		
+	}
+}
+//家电选项卡
+function handleTabControl(){
+	var oA = document.querySelectorAll('.appliances .phone .header-GM-link a');
+	var oUl = document.querySelector('.appliances .phone .sp .content-sp');
+	for(var i = 0;i<oA.length;i++){
+		oA[i].index = i;
+		oA[i].onmouseenter = function(){
+			for(var j = 0;j<oA.length;j++){
+				oA[j].className = '';
+			}
+			this.className = 'Tong';
+			TabControlData(this.index);
 		}		
 	}
-	oI[1].onclick = function(){
-		oUl.style.left = -978 + 'px';
-		if(oUl.style.left == '-978px'){
-			oI[0].style.color = '#b0b0b0';
-			oI[1].style.color = '#e0e0e0';
+	function TabControlData(index){
+		var Data = ElectricData[index];
+		var html = '';
+		for(var i = 0;i<Data.length-1;i++){
+			html+='	<li class="sp-link sp-link-m">'
+			html+='		<a href="'+Data[i].url+'">'
+			html+='			<img src="'+Data[i].src+'" alt="">'
+			html+='			<h2>'+Data[i].name+'</h2>'
+			html+='			<p class="ms">'+Data[i].ms+'</p>'
+			html+='			<p class="mey">'+Data[i].mey+' <span>元</span> <s>'+Data[i].del+'</s></p>'
+			html+='		</a>'
+			html+='		<p class="sp-lb"><span>减</span> '+Data[i].lb+' <span>元</span></p>'
+			if(Data[i].key){
+				html+='		<a class="sp-link-key" href="#">'
+				html+='			<p>'+Data[i].key.content+'</p>'
+				html+='			<p>来自与 '+Data[i].key.author+' 的评价</p>'
+				html+='		</a>'
+			}
+			html+='	</li>'
 		}
+		oUl.innerHTML = html
 	}
 }

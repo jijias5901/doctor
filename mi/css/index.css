@@ -796,7 +796,7 @@
 .header-T .header-link a:nth-child(2){
 	border-left: none;
 }
-.header-T .header-link a:hover{
+.header-T .header-link a:hover i{
 	color: #ff6700;
 }
 
@@ -945,16 +945,12 @@
 	height: 30px;
 	margin-left: 15px;
 }
-.main .appliances .header-GM-link li:nth-child(1) .link-a{
-	color: #ff6700;
-	border-bottom: 2px solid #ff6700;
-}
 .main .appliances .header-GM-link li a{
 	font-size: 16px;
 	line-height: 30px;
 	text-align: center;
 }
-.main .appliances .header-GM-link li:hover .link-a{
+.main .appliances .header-GM-link .Tong{
 	color: #ff6700;
 	border-bottom: 2px solid #ff6700;
 }
