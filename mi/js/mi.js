@@ -86,21 +86,6 @@ var FocusTabData = [
 	],
 ]
 
-/*
-							<li class="sp-link sp-link-m">
-								<a href="#">
-									<img src="images/p1.jpg" alt="">
-									<h2>小米MIX 2 8GB+128GB 黑色</h2>
-									<p class="ms">Unibody 全陶瓷</p>
-									<p class="mey">3699 <span>元</span> <s>4699元</s></p>
-								</a>
-								<p class="sp-lb"><span>减</span> 800 <span>元</span></p>
-								<a class="sp-link-key" href="#">
-									<p>我竟然也有如此神奇的东西</p>
-									<p>来自与 哈哈 的评价</p>
-								</a>
-							</li>
-*/
 //模拟家电选项卡数据
 var ElectricData = [
 	[
@@ -198,6 +183,7 @@ var ElectricData = [
 		{
 			top:{
 				url:"www.kuazhu.com",
+				src:"images/ca.png",
 				name:"红米Note3",
 				price:"0.99元",
 				src:"images/ca.png"
@@ -210,9 +196,330 @@ var ElectricData = [
 			}
 		}
 	],
-	[],
-	[],
-	[]
+	[
+		{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+		{
+			top:{
+				url:"www.kuazhu.com",
+				src:"images/ca.png",
+				name:"红米Note3",
+				price:"0.99元",
+				src:"images/ca.png"
+			},
+			bottom:{
+				url:"www.kuazhu.com",
+				name:"浏览更多",
+				content:"家居",
+				icon:"&#xe615;"
+			}
+		}
+	],
+	[
+		{
+			url:"www.kuazhu.com",
+			src:"images/p2.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p2.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+		{
+			top:{
+				url:"www.kuazhu.com",
+				src:"images/ca.png",
+				name:"红米Note3",
+				price:"0.99元",
+				src:"images/ca.png"
+			},
+			bottom:{
+				url:"www.kuazhu.com",
+				name:"浏览更多",
+				content:"家居",
+				icon:"&#xe615;"
+			}
+		}
+	],
+	[
+		{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+			{
+			url:"www.kuazhu.com",
+			src:"images/p1.jpg",
+			name:"小米MIX 2 8GB+128GB 黑色",
+			ms:"Unibody 全陶瓷",
+			mey:"3699",
+			del:"4699",
+			lb:"800",
+			key:{
+				content:"我竟然也有如此神奇的东西",
+				author:"哈哈"
+			}
+		},
+		{
+			top:{
+				url:"www.kuazhu.com",
+				src:"images/ca.png",
+				name:"红米Note3",
+				price:"0.99元",
+				src:"images/ca.png"
+			},
+			bottom:{
+				url:"www.kuazhu.com",
+				name:"浏览更多",
+				content:"家居",
+				icon:"&#xe615;"
+			}
+		}
+	],	
 ]
 
 
@@ -575,6 +882,23 @@ function handleTabControl(){
 			}
 			html+='	</li>'
 		}
+		var Paging = Data[Data.length-1];
+			html+='	<li class="appliances-box">'
+			html+='		<div class="appliances-link">'
+			html+='			<div>'
+			html+='				<a href="#"><p>'+Paging.top.name+'</p></a>'
+			html+='				<p>'+Paging.top.price+'</p>'
+			html+='			</div>'
+			html+='			<a class="link-img" href="#"><img src="'+Paging.top.src+'" alt=""></a>'
+			html+='		</div>'
+			html+='		<div class="appliances-browse">'
+			html+='			<a href="#">'
+			html+='				<h2>'+Paging.bottom.name+'</h2>'
+			html+='				<p>'+Paging.bottom.content+'</p>'
+			html+='			</a>'
+			html+='			<a href="#"><i class="iconfont">'+Paging.bottom.icon+'</i></a>'
+			html+='		</div>'
+			html+='	</li>'
 		oUl.innerHTML = html
 	}
 }
