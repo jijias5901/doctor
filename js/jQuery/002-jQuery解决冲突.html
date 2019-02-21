@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		
+</body>
+
+<script>
+	(function(window){
+		window.$ = function(){
+			console.log("$!!")
+		}
+	})(window)
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	var kz = jQuery.noConflict();
+	$();
+	kz(function(){
+		console.log("hello")
+	})
+</script>
+</html>

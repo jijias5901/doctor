@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 5000px;
+		}
+		a{
+			text-decoration: none;
+			font-size: 15px;
+			color: #000;
+		}
+		li{
+			list-style: none;
+		}
+		.s-nav{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 0px;
+			overflow: hidden;
+			background-color: #ff0;
+		}
+		.common{
+			width: 1220px;
+			margin: 0 auto;
+		}
+		li{
+			float: left;
+			/*width: 7%;*/
+			height: 60px;
+			line-height: 60px;
+			margin-left: 25px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="s-nav">
+		<div class="common">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">手机</a></li>
+				<li><a href="#">"足迹"系列</a></li>
+				<li><a href="#">官方配件</a></li>
+				<li><a href="#">畅呼吸系列</a></li>
+				<li><a href="#">箱包类</a></li>
+				<li><a href="#">品牌周边</a></li>
+				<li><a href="#">智能音箱</a></li>
+				<li><a href="#">服务</a></li>
+				<li><a href="#">企业团购</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script src="synthesize-animation.js"></script>
+<script>
+	var oSnav = document.querySelector('.s-nav');
+	window.onscroll = function(){
+		if(window.pageYOffset > 200){
+			animate(oSnav,{height:60},true,function(){
+				oSnav.style.overflow = 'visible';
+			});				
+		}
+		if(window.pageYOffset < 200){
+			oSnav.style.overflow = 'hidden';
+			animate(oSnav,{height:0},true)
+		}
+	}
+</script>
+</html>
