@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("div").on("myClick",function(ev,obj){
+			$("div").css(obj);
+		})
+		$("div").trigger("myClick",{width:"100px",height:"100px",backgroundColor:"blue"});
+	})
+</script>
+</html>

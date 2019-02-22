@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			background: blue;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			background: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">1</div>
+	<div class="box2">2</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function(){
+		console.log($("div").css("width"));
+		console.log($("div").eq(1).css("height"));
+
+		$("div").css("width","400px").css("height","400px");
+
+		$("div").css({
+			width:"400px",
+			height:"400px",
+			background:"red",
+			marginTop:"20px"
+		})
+
+	})
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+		.box2{
+			color: red;
+		}
+		.box3{
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<button>点击</button>
+	<div>div1</div>
+	<div>div2</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("div").attr("class","box1 box2 box3");
+		$("div").addClass("box1 box2 box3");
+		$("div").removeClass("box3");
+
+		var oBtn = document.querySelector("button");
+		oBtn.onclick = function(){
+			$("div").toggleClass("box3");
+		}
+	})
+</script>
+</html>
