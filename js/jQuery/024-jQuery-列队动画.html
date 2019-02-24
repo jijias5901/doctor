@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>开始动画</button>
+	<div></div>
+	<div></div>
+</body>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("button").on("click",function(){
+			/*
+			$("div").animate({width:200},1000);
+			$("div").animate({height:200},1000);
+			$("div").animate({opacity:0.5},1000);
+			
+			
+			$("div").animate({width:200},1000,function(){
+				$("div").animate({height:200},1000,function(){
+					$("div").animate({opacity:0.5},1000);
+				});
+			})
+			*/
+
+			$("div")
+			.animate({width:200},1000,function(){
+				console.log("111")
+			})
+			.animate({height:200},1000,function(){
+				console.log("222")
+			})
+			.animate({opacity:0.5},1000,function(){
+				console.log("333")
+			});
+		})
+	})
+</script>
+</html>

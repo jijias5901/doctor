@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("div").animate({width:200},1000).delay(1000);
+		$("div").animate({height:200},1000).delay(1000);
+		$("div").animate({opacity:0.5},1000);
+	})
+</script>
+</html>

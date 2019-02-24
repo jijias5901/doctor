@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>获取</button>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("button").on("click",function(){
+			$.ajax({
+					url:"data.json",
+					type:"GET",
+					dataType:"json"
+			})
+			.done(function(data,statusMsg,jqXHR){
+				console.log(data);
+				console.log(statusMsg);
+				console.log(jqXHR);	
+			})
+			.fail(function(jqXHR,statusMsg){
+				console.log(statusMsg);
+				console.log(jqXHR);	
+			})
+			.always(function(jqXHR,statusMsg){
+				console.log(statusMsg);
+				console.log(jqXHR);	
+			})
+
+		})
+	})
+</script>
+</html>

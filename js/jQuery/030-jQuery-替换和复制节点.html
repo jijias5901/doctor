@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>替换1</button>
+	<button>替换2</button>
+	<button>复制</button>
+	<div>aaa</div>
+	<!-- <div>bbb</div>
+	<div>ccc</div> -->
+</body>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$("button").eq(0).on("click",function(){
+			// var $h1 = $("<h1>李响是个孬蛋</h1>");
+			// $("div").replaceWith($h1);
+			$("div").replaceWith("<h1>李响是个孬蛋</h1>");
+		})
+		$("button").eq(1).on("click",function(){
+			var $h1 = $("<h1>李响是个孬蛋</h1>");
+			$h1.replaceAll("div");
+		})
+		$("button").eq(2).on("click",function(){
+			$("div").clone();
+		})
+	})
+</script>
+</html>
