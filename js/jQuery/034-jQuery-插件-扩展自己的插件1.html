@@ -18,15 +18,15 @@
 </head>
 <body>
 	<button>测试插件</button>
-	<div></div>
-	<div></div>
+	<div>dddd</div>
+	<div>cccc</div>
 </body>
 <script src="jquery-1.12.4.js"></script>
 <script>
 	(function($){
 		$.fn.setColor = function(){
 			console.log(this)
-			// this.style = "red";
+			this.css();
 		}
 	})(jQuery);
 </script>
