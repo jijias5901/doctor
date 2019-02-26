@@ -9,22 +9,30 @@
 	<div></div>
 	<div></div>
 </body>
-<script src="jquery-1.12.4.js"></script>
-<!-- <script src="hQuery1-0-0.js"></script> -->
+<!-- <script src="jquery-1.12.4.js"></script> -->
+<script src="hQuery-1.0.0.js"></script>
 <script>
 	//1false
-	console.log($(""));
-	console.log($(null));
-	console.log($(NaN));
+	// console.log($(""));
+	// console.log($(null));
+	// console.log($(NaN));
 	//2函数
-	console.log($(function(){}))
+	// console.log($(function(){}))
 	//3字符串
-	console.log($("<h1>dddd</h1><p></p>"));
-	console.log($("div"))
+	// console.log($("<h1>dddd</h1><p></p>"));
+	// console.log($("div"))
 	//4数组
 	//4.1真
+	var arr = [1,2,4,5,8];
+	console.log($(arr));
 	//4.2伪
+	var oArr = {0:"aa",1:"bb",length:2}
+	console.log($(oArr));
+	// console.log($())
 	//对象
+	var obj = {name:"Leo",age:18};
+	console.log($(obj));
+	console.log($("#box"));
 	
 </script>
 </html>
