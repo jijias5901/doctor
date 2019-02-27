@@ -22,31 +22,35 @@
 <body>
 	<button>显示</button>
 	<button>隐藏</button>
-	<div></div>
+	<div class="box"></div>
 </body>
 <script src="js/jquery-1.12.4.js"></script>
 <script>
-	(function($){
-		var $slient = {
+var slient = {
 
-			show:function(){
+	show:function($elem,cb){
+		$elem.show();
+		cb();
+	},
 
-			},
+	hide:function($elem,cb){
+		$elem.hide();
+		cb();
+	}
 
-			hide:function(){
+}
 
-			}
+var $elem = $(".box");
+$("button").eq(0).on("click",function(){
+	slient.show($elem,function(){
+		console.log("....")
+	})
+})
+$("button").eq(1).on("click",function(){
+	slient.hide($elem,function(){
+		console.log("hide..")
+	})
+})
 
-		}
-
-
-		$("button").eq(0).on("click",function(){
-
-		})
-
-
-
-
-	})(jQuery);
 </script>
 </html>

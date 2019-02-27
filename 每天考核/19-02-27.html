@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		<ul class="list">
+			<li class="item1">li1</li>
+			<li class="item3">li3</li>
+			<li class="item7">li7</li>
+			<li class="item5">li5</li>
+		</ul>
+	</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var $li0 = $("<li class='item0'>li0</li>");
+		var $li2 = $("<li class='item2'>li2</li>");
+		var $li4 = $("<li class='item5'>li4</li>");
+		var $li6 = $("<li class='item6'>li6</li>");
+		$("ul").prepend($li0);
+		$(".item1").after($li2);
+		$(".item7").replaceWith($li4);
+		$("ul").append($li6);
+	})
+</script>
+</html>
