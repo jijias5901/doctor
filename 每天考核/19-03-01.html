@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button>测试</button>
+	<div></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+;(function($){
+	$.prototype.SetCss = function(str){
+		
+	}
+
+})(jQuery)
+</script>
+<script>
+	$("button").on("click",function(){
+		$("div").SetCss();
+	})
+</script>
+</html>

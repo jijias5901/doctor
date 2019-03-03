@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		button{
+			width: 80px;
+			height: 40px;
+		}
+		div{
+			position: absolute;
+			left: 0;
+			top: 100px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button>复原</button>
+	<button>移动</button>
+	<div class="box"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	(function($){
+
+		function BoxMove($elem){
+			this.$elem = $elem;
+			this.currenX = this.$elem.css("left");
+			this.currenY = this.$elem.css("top");
+		}
+		BoxMove.prototype = {
+			constructor:BoxMove,
+			to:function(x,y){
+				if()
+				this.$elem.css("left",x);				
+				this.$elem.css("top",y);				
+			},
+			x:function(){
+
+			},
+			y:function(){
+
+			}
+		}
+		var $elem = $(".box");
+		var moved = new BoxMove($elem);
+
+
+		$("button").eq(0).on("click",function(){
+			moved.to(0,100)
+		});
+		$("button").eq(1).on("click",function(){
+			moved.to(200,200)
+		})
+
+	})(jQuery);
+</script>
+</html>

@@ -1,0 +1,33 @@
+
+
+body{
+	font-size: 12px;
+}
+.container{
+	width: 1200px;
+	margin-top: auto;
+	margin-left: auto;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.clearfix{
+	*zoom:1;
+}
+a{
+	text-decoration: none;
+	color: #4d555d;
+}
+.link:hover{
+	color: #ea675a;
+}
