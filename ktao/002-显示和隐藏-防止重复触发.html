@@ -27,20 +27,29 @@
 <script src="js/jquery-1.12.4.js"></script>
 <script>
 var slient = {
-
-	show:function($elem){
-		$elem.trigger("show");
-		$elem.show();
-		$elem.trigger("shown");
+	init:function(){
+		if($elem.is(":hidden")){
+			$elem.data("status","hidden");
+		}else{
+			$elem.data("status","shown");
+		}
 	},
-
+	show:function($elem){
+		if($elem.data("status") == "shown") return;
+		$elem.data("status","show").trigger("show");
+		$elem.show();
+		$elem.trigger("shown").data("status","shown");
+	},
 	hide:function($elem){
-		$elem.trigger("hide");
+		if($elem.data("status") == "hidden") return;
+		$elem.data("status","hide").trigger("hide");
 		$elem.hide();
-		$elem.trigger("hidden");
+		$elem.trigger("hidden").data("status","hidden");
 	}
 }
 var $elem = $(".box");
+
+slient.init($elem);
 
 $elem.on("show shown hide hidden",function(ev){
 	if(ev.type == "show"){
