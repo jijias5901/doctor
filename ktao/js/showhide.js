@@ -156,9 +156,40 @@
 		})
 	};
 
+	function getShowHide($elem,options){
+		var showHideFn = slient;
+		if(options.js){
+			showHideFn = js[options.mode];
+		}
+		showHideFn.init($elem);
+		return {
+			show:showHideFn.show,
+			hide:showHideFn.hide
+		}
+	}
+
+
+	var DEFAULTS = {
+		js:true,
+		mode:"fade"
+	}
+
+
 	$.fn.extend({
-		showHide:function(){
-			
+		showHide:function(options){
+			return this.each(function(){
+				var $elem = $(this);
+				var showHideObj = $elem.data("showHideObj");
+				if(!showHideObj){
+					options = $.extend({},DEFAULTS,options);
+					showHideObj = getShowHide($elem,options);
+					$elem.data("showHideObj",showHideObj);
+				}
+				if(typeof showHideObj[options] == "function"){
+					
+					showHideObj[options]($elem);
+				}
+			})
 		}
 	})
 

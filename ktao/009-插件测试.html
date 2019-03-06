@@ -32,7 +32,10 @@
 <script>
 
 var $elem = $(".box");
-$elem.showHide();
+$elem.showHide({
+	js:true,
+	mode:"slideDownUp"
+});
 $elem.on("show shown hide hidden",function(ev){
 	if(ev.type == "show"){
 		console.log("show...")
@@ -46,10 +49,10 @@ $elem.on("show shown hide hidden",function(ev){
 })
 
 $("button").eq(0).on("click",function(){
-	
+	$elem.showHide("show")
 })
 $("button").eq(1).on("click",function(){
-	
+	$elem.showHide("hide")
 })
 </script>
 </html>
