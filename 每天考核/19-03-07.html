@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// function fn(num){		
+	// 	var sNum = num.toString();
+	// 	if(!sNum[1]){
+	// 		console.log(sNum);
+	// 	}
+	// 	else if(sNum[0] == sNum[1]){
+	// 		console.log(sNum);
+	// 	}
+	// 	else if(sNum[0] == sNum[2]){
+	// 		console.log(sNum);
+	// 	}
+	// 	else if(sNum[0] == sNum[3] && sNum[1] == sNum[2]){
+	// 		console.log(sNum)
+	// 	}
+	// }
+	// fn(11)
+
+	function huiWen(a,b){
+		// var str = num.toString();
+		// var str1 = str.split("").reverse().join("");
+		// // var str2 = str1.join("");
+
+		// if(str == str1){
+		// 	console.log("是回文");
+		// }else{
+		// 	console.log("不是回文");
+		// }
+		var arr = [];
+		for(var i = a;i<=b;i++){
+			var str = i.toString();
+			var str1 = str.split("").reverse().join("");
+			if(i == str1){
+				arr.push(i)
+			}
+		}
+		return arr;
+	}
+	var fn = huiWen(1,10000)
+	console.log(fn)
+</script>
+</html>
