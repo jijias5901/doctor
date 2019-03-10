@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			float: left;
+			width: 5rem;
+		}
+		p{
+			font-size: 0.5rem;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/001.jpg" alt="">
+	<p>我是段落</p>
+</body>
+<script>
+	(function(win,doc){
+		var oHtml = document.getElementsByTagName("html")[0];
+		function HtmlFontSize(){			
+			var iFontSize = doc.documentElement.clientWidth || doc.body.clientWidth;	
+			oHtml.style.fontSize = iFontSize / 10 + "px";
+		}
+	
+		win.addEventListener("resize",HtmlFontSize,false);	
+
+	})(window,document);
+	
+
+
+</script>
+</html>
