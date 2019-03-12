@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>要求一张图片,一段文字,一个红色盒子,完成屏幕适配</title>
+	<meta name="viewport" content="width=device-width">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			float: left;
+			width: 5rem;
+		}
+		p{
+			float: left;
+			font-size: 0.1rem;
+		}
+		div{
+			float: left;
+			width: 3rem;
+			height: 2rem;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<img src="../css进阶/images/001.jpg" alt="">
+	<p>我是一段文字</p>
+	<div></div>
+</body>
+<script>
+	(function(win,doc){
+		var oHtml = document.getElementsByTagName("html")[0];
+		function setFontSize(){
+			var iFontSize = doc.documentElement.clientWidth || doc.body.clientWidth;
+			oHtml.style.fontSize = iFontSize / 15 + "px";			
+		}
+		win.addEventListener("resize",setFontSize,false);
+		
+	})(window,document);
+
+
+
+</script>
+</html>

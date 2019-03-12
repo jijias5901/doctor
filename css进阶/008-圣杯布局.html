@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+		}
+		header{
+			background: skyblue;
+		}
+		footer{
+			background: yellow;
+		}
+		header,footer{
+			flex: 0 0 12vh;
+		}
+		section{
+			display: flex;
+			flex: 1;
+			background: #ccc;
+			flex-direction: row;
+		}
+		nav{
+			background: tomato;
+		}
+		aside{
+			background: blue;
+		}
+		nav,aside{
+			flex: 0 0 12vh;
+		}
+		.main{
+			flex: 1;			
+		}
+	</style>
+</head>
+<body>
+	<header>header</header>
+	<section>
+		<nav>nav</nav>
+		<main class="main">main</main>
+		<aside>aside</aside>
+	</section>
+	<footer>footer</footer>
+</body>
+</html>
