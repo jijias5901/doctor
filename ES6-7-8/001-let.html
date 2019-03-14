@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	var a = 1;
+	var a = 2;
+	console.log(a);
+	*/
+	/*
+	let b = 1;
+	let b = 2;
+	console.log(b);
+	*/
+	/*
+	function fn1(){
+		var a = 1;
+		function fn2(){
+			a = 2;
+			console.log("1:::",a);
+		}
+		console.log("2:::",a)
+		fn2();
+		console.log("3:::",a);
+	}
+	fn1()
+	*/
+	function fn11(){
+		let a = 1;
+		function fn22(){
+			let a = 3;
+			console.log("let1:::",a);//3
+			function fn33(){
+				console.log("let4:::",a);//3
+			}
+			fn33();
+			console.log("let5:::",a);//3
+		}
+
+		console.log("let2:::",a)//1
+		fn22();
+		console.log("let3:::",a);//1
+	}
+	fn11()
+
+
+
+</script>
+</html>

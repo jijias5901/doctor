@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let obj = {
+		usename:"Tom",
+		age:18
+	}
+
+	// var usename = obj.usename;
+	// var age = obj.age;
+
+	// let {usename:usename,age:age} = obj;
+
+	// let {usename,age} = {usename:"Leo",age:20};
+
+	let {usename,age,frined={usename:"LiXiang"}} = {usename:"Leo",age:20,frined:{usename:"Peter"}};
+
+
+
+	console.log(usename,age,frined)
+</script>
+</html>
