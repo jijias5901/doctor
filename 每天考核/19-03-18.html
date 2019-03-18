@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用Promise方法拿到信息</title>
+</head>
+<body>
+	
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	function UersName(url){
+		return new Promise((resolve,reject)=>{
+			$.get(url,data=>{
+				resolve(data);
+			})
+		})
+	}
+	var uersname = UersName("http://127.0.0.1:3000");
+	uersname
+	.then(data=>{
+		return UersName(data.kuazhu_url);
+		// console.log(data);
+	})
+	.then(data=>{
+		console.log(data.userInfo.phoneNum);
+	})
+	
+</script>
+</html>

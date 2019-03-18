@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let s = Symbol();
+
+	let s1 = Symbol("username for Tom");
+	let s2 = Symbol("username for Leo");
+	let obj = {
+		[s1]:"Tom",
+		[s2]:"Leo",
+		age:18
+	};
+	/*
+	for(let key in obj){
+		console.log(key)
+	}
+	*/
+	let s3 = Reflect.ownKeys(obj);
+	for(let key of s3){
+		console.log(key);
+	}
+	console.log(s3);
+</script>
+</html>

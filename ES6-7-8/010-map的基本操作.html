@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let map = new Map();
+	let obj1 = {name:"Tom"};
+	let obj2 = {name:"Leo"};
+	map.set("age",18);
+	map.set(obj1,"Lixiang");
+	map.set(obj2,"DaNaoDan");
+
+	console.log(map.get(obj1));
+	console.log(map.has(obj2));
+	map.delete(obj1);
+	map.clear();
+	console.log(map);
+</script>
+</html>

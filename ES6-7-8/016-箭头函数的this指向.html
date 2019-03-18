@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function Timer(id){
+		this.id = id;
+		setTimeout(function(){
+			console.log(this,this.id)
+		},200);
+		//这个this是在调用的时候 谁调用就是谁 这里是window在调用
+	}
+	*/
+	function Timer(id){
+		this.id = id;
+		setTimeout(()=>{console.log(this,this.id)},200);
+		//箭头函数this指向 在定义的时候是谁 this就是谁
+	}
+	var id = 100;
+
+	new Timer(200);
+
+
+</script>
+</html>

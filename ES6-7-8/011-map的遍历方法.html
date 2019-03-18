@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let map = new Map();
+	let obj1 = {name:"Tom"};
+	let obj2 = {name:"Leo"};
+	map.set("age",18);
+	map.set(obj1,"Lixiang");
+	map.set(obj2,"DaNaoDan");
+
+	for(let key of map.keys()){
+		console.log(key);
+	}
+	for(let value of map.values()){
+		console.log(value);
+	}
+	for(let entry of map){
+		console.log(entry);
+	}
+	for(let entry of map.entries()){
+		console.log(entry);
+	}
+
+	map.forEach(function(val,key){
+		console.log(val,key)
+	})
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	function fn(url){
+		return new Promise((resolve,reject)=>{
+			$.get(url,data1=>{
+				resolve(data1);
+			})
+		})
+	}
+	var AjaxGet = fn("https://api.github.com/users/jijias5901");
+	AjaxGet
+	.then(data2=>{
+		return fn(data2.followers_url);
+	})
+	.then(data3=>{
+		return fn(data3.followers_url);
+	})
+	.then(data4=>{
+		console.log(data4);
+	})
+</script>
+</html>

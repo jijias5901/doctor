@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//new Promise传的参数会立即执行
+	var promise = new Promise((resolve,reject)=>{
+		resolve((n1,n2)=>{
+			 n1 + n2;
+		});
+		// reject("出错");
+	});
+
+	promise
+	.then((data)=>{
+		console.log(data(1,2));
+	},(err)=>{
+		console.log(err);
+	})
+	console.log("hello")
+</script>
+</html>

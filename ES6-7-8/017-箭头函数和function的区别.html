@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function Fn(){
+
+	}
+	var fn = new Fn();
+	console.log(fn);
+	*/
+	/*
+	var Fn = ()=>{
+
+	} 
+	var fn = new Fn;//箭头函数不能new  他不是构造函数
+	console.log(fn);//Fn is not a constructor报错
+	*/
+	/*
+	function Fn(){
+		console.log(arguments);
+	}
+	Fn(1,2,3);
+	*/
+	/*
+	var Fn = ()=>{
+		console.log(arguments);
+	}
+	Fn(1,2,3)//报错 arguments is not defined 箭头函数没有arguments
+	*/
+
+	fn();
+	function fn(){
+		console.log("hello");
+	}
+
+	fn1()//报错 fn1 is not a function 箭头函数没有函数声明提升
+	var fn1 = ()=>{
+		console.log("hello")
+	}
+</script>
+</html>
