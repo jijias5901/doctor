@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">请求github信息</button>
+	<br><br>
+	<h1>所有github用户的信息</h1>
+	<div id="user"></div>
+</body>
+<script>
+	document.getElementById("btn").addEventListener("click",loadUsers);
+
+	function loadUsers(){
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET","https://api.github.com/users",true);
+		xhr.onload = function(){
+			var users = JSON.parse(this.responseText);
+			// console.log(users);
+			var output = "";
+			for(var i in users){
+				output += '';
+			}
+		}
+		xhr.send();
+	}
+</script>
+</html>
