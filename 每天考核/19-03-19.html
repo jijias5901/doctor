@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ES6构造函数的定义和继承</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Parsion{
+		constructor(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		sayName(){
+			console.log("I am "+this.name);
+		}
+		sayAge(){
+			console.log("I am "+this.age+" years old");
+		}
+	}
+	let p = new Parsion("Tom",18);
+	console.log(p);
+	p.sayName();
+	p.sayAge();
+
+	class Fn extends Parsion{
+		constructor(name,age,major){
+			super(name,age);
+			this.major = major;
+		}
+		sayMajor(){
+			console.log("I am "+this.major);
+		}
+		static sayHello(){
+			console.log("hello")
+		}
+	}
+	let f = new Fn("Leo",22,"Computer");
+	console.log(f);
+	f.sayMajor();
+	Fn.sayHello();
+</script>
+</html>
