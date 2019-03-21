@@ -5,7 +5,9 @@ class Emitter extends EventEmitter{
 }
 
 let emitter = new Emitter();
+
 emitter.setMaxListeners(11);
+
 emitter.on("test",()=>{
 	console.log("1::hello");
 })
