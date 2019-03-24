@@ -11,20 +11,20 @@
 	let s = new Set([11,22,33,44,68,86,99]);
 
 	for(let key of s.keys()){
-		console.log(key);
+		console.log("1:::",key);
 	}
 	for(let value of s.values()){
-		console.log(value);
+		console.log("2:::",value);
 	}
 	for(let value of s){
-		console.log(value);
+		console.log("3:::",value);
 	}
 	for(let entire of s.entries()){
-		console.log(entire);
+		console.log("4:::",entire);
 	}
 
 	s.forEach(function(val,key){
-		console.log(val,index)
+		console.log("5:::",val,key)
 	})
 
 </script>
