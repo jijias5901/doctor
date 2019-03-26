@@ -8,21 +8,76 @@ const http = require('http');
 const url = require('url');
 const path = require('path');
 const fs = require('fs');
+const querystring = require("querystring")
+
 const swig = require("swig");
-
-const{ getAll } = require("./WishModel.js");
-
-
 const mime = require('./mime.json');
+
+const{ getAll,add,remove } = require("./WishModel.js");
+
 const server = http.createServer((req,res)=>{
 	console.log('url=>',req.url);
 	let reqUrl = url.parse(req.url,true);
 	let pathname = reqUrl.pathname;
+	// console.log("pathname::",pathname);
 	
 	if(pathname == '/' || pathname == '/index.html'){//获取首页
-		res.setHeader('Content-Type',"text/html;charset=utf-8");
-		getAll.forEach()		
-		res.end(html);
+		getAll()
+		.then(data=>{
+			let template = swig.compileFile(__dirname+'/static/index.html');
+			let html = template({
+				data
+			});
+			res.setHeader('Content-Type',"text/html;charset=utf-8");
+			res.end(html);
+		})
+		.catch(err=>{
+			console.log("get data err....");
+			res.setHeader('Content-Type',"text/html;charset=utf-8");
+			res.statusCode = 500;
+			res.end("<h1>出问题了</h1>");
+		})	
+	}
+	else if(pathname == "/add" && req.method.toLowerCase() == "post"){
+		let body = "";
+		req.on("data",(chunk)=>{
+			body += chunk;
+		});
+		req.on("end",()=>{
+			let obj = querystring.parse(body);
+			add(obj)
+			.then(data=>{
+				let result = JSON.stringify({
+					status:0,
+					data
+				})
+				res.end(result);
+			})
+			.catch(err=>{
+				let result = JSON.stringify({
+					status:10,
+					message:"添加失败"
+				})
+				res.end(result);
+			})
+		});	
+	}
+	else if(pathname == "/del"){
+		let id = reqUrl.query.id;
+		remove(id)
+		.then(data=>{
+			let result = JSON.stringify({
+					status:0,
+				})
+			res.end(result);
+		})
+		.catch(err=>{
+			let result = JSON.stringify({
+					status:10,
+					message:"删除失败"
+				})
+			res.end(result);
+		})
 	}
 	else{//请求静态资源
 		let filePath =path.normalize(__dirname + '/static/'+pathname);
