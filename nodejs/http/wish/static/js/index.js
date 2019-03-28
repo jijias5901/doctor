@@ -45,7 +45,7 @@
 	//监听添加事件
 	$(".sub-btn").on("click",function(){
 		$.ajax({
-			url:"/add",
+			url:"/Wish/add",
 			type:"post",
 			dataType:"json",
 			data:{
@@ -71,9 +71,8 @@
 	$wall.on("click",".close",function(){
 		let $this = $(this);
 		$.ajax({
-			url:"del",
-			dataType:"json",
-			data:"id=" + $this.data("id")
+			url:"/Wish/del/"+$this.data("id"),
+			dataType:"json"
 		})
 		.done(function(result){
 			if(result.status == 0){

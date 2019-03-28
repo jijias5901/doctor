@@ -1,0 +1,70 @@
+const querystring = require("querystring")
+const swig = require("swig");
+
+
+const{ getAll,add:addWish,remove } = require("../Model/Wish.js");
+
+
+class Wish{
+	index(req,res,...args){
+		getAll()
+		.then(data=>{
+			let template = swig.compileFile(__dirname+'/../View/Wish/index.html');
+			let html = template({
+				data
+			});
+			res.setHeader('Content-Type',"text/html;charset=utf-8");
+			res.end(html);
+		})
+		.catch(err=>{
+			console.log("get data err....");
+			res.setHeader('Content-Type',"text/html;charset=utf-8");
+			res.statusCode = 500;
+			res.end("<h1>出问题了</h1>");
+		})
+	}
+	add(req,res,...args){
+		let body = "";
+		req.on("data",(chunk)=>{
+			body += chunk;
+		});
+		req.on("end",()=>{
+			let obj = querystring.parse(body);
+			addWish(obj)
+			.then(data=>{
+				let result = JSON.stringify({
+					status:0,
+					data
+				})
+				res.end(result);
+			})
+			.catch(err=>{
+				let result = JSON.stringify({
+					status:10,
+					message:"添加失败"
+				})
+				res.end(result);
+			})
+		});
+	}
+	del(req,res,...args){
+		remove(args[0])
+		.then(data=>{
+			let result = JSON.stringify({
+					status:0,
+				})
+			res.end(result);
+		})
+		.catch(err=>{
+			let result = JSON.stringify({
+					status:10,
+					message:"删除失败"
+				})
+			res.end(result);
+		})
+	}
+}
+
+
+
+module.exports = new Wish();
