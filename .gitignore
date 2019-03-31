@@ -1,1 +1,2 @@
-002-mongodb/001-mongoose
+.002-mongodb
+**/node_modules
