@@ -1,2 +1,5 @@
-.002-mongodb
+**/db
 **/node_modules
+*.png
+*.jpg
+*.jpeg
