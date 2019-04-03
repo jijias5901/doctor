@@ -4,12 +4,13 @@
 * @Last Modified by:   TomChen
 * @Last Modified time: 2019-03-29 20:54:14
 */
-const express = require('express')
-const swig = require('swig')
+const express = require('express');
+const swig = require('swig');
 const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
 
 const app = express();
-const port = 3000
+const port = 3000;
 
 //1.连接数据库服务
 mongoose.connect('mongodb://localhost/blog', {useNewUrlParser: true});
@@ -38,8 +39,14 @@ app.set('views', './views')
 //注册模板引擎
 app.set('view engine', 'html')
 
-app.get('/',(req,res)=>{
-	res.render('main/index')
-})
+//中间件配置
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.listen(port, () => console.log(`app listening on port ${port}!`))
+//请求
+app.use('/',require("./routes/index.js"));
+app.use('/user',require('./routes/user.js'));
+
+
+
+app.listen(port, () => console.log(`app listening on port ${port}!`));

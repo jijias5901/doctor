@@ -26,20 +26,39 @@
 		let username = $register.find('[name="username"]').val();
 		let password = $register.find('[name="password"]').val();
 		let repassword = $register.find('[name="repassword"]').val();
-
 		//2.验证表单数据
-		if(/^[a-z][0-9_]{5,9}$/i)
-
+		var errMsg = '';
+		var $err = $register.find('.err');
+		if(!/^[a-z][0-9a-z_]{2,9}$/i.test(username)){
+			errMsg = '用户名以字母开头,包含数字下划线的3-10位字符';
+		}
+		else if(!/^\w{3,8}$/.test(password)){
+			errMsg = '密码3-6位字符';
+		}
+		else if(password != repassword){
+			errMsg = '两次密码输入不一致';
+		}
 		
-		//3.向服务器发送数据
-
-
-
-		$.ajax({
-			url:''
-		})
+		if(errMsg){
+			$err.html(errMsg);
+			return;
+		}else{//3.向服务器发送数据
+			$err.html('');
+			$.ajax({
+				url:'/user/register',
+				type:"post",
+				dataType:"json",
+				data:{
+					username:username,
+					password:password
+				}
+			})
+			.done(function(rusult){
+				console.log(rusult);
+			})
+			.fail(function(err){
+				$err.html('请求失败,请稍后再试');
+			})
+		}		
 	})
-
-
-
 })(jQuery);
