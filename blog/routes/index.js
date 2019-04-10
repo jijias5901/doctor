@@ -1,13 +1,19 @@
 const express = require("express");
+const CategoryModel = require('../models/Category.js');
 
 const router = express.Router();
 
 
 
 router.get('/',(req,res)=>{
-	res.render('main/index',{
-		userInfo:req.userInfo
-	});
+	CategoryModel.find({},'name')
+	.sort({orede:1})
+	.then(categories=>{
+		res.render('main/index',{
+			userInfo:req.userInfo,
+			categories
+		});
+	})
 })
 
 

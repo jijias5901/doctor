@@ -9,8 +9,7 @@ module.exports = {
 	//单入口写法一
 	entry:{
 		//chunk名称:文件路径
-		common:'./src/page/common/index.js',		
-		main:'./src/page/index/index.js',
+		index:'./src/index.js',		
 	},
 	//单入口写法二
 	//entry: './src/index.js',
@@ -42,12 +41,23 @@ module.exports = {
 			    		}
 			  		}
 				]
-			}				
+			},
+		//babel	
+			{
+			    test:/\.js$/,
+			    exclude: /(node_modules)/,
+			    use: {
+			        loader: 'babel-loader',
+			        options: {
+			            presets: ['env', 'react']
+			        }
+			    }               
+			}							
 		]
 	},
 	plugins:[
 	    new htmlWebpackPlugin({
-	        template:'./src/view/index.html',//模板文件
+	        template:'./src/index.html',//模板文件
 	        filename:'index.html',//输出的文件名
 	        inject:true,//脚本写在那个标签里,默认是true(在body结束后)
 	        hash:true//给生成的js/css文件添加一个唯一的hash
