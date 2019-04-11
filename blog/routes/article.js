@@ -37,49 +37,28 @@ router.get('/',(req,res)=>{
 })
 
 //显示添加文章页面
-router.get('/add',(req,res)=>{
-	CategoryModel.find({},'name')
-	.sort({order:-1})
-	.then(categories=>{
-		res.render('admin/article_add',{
-			userInfo:req.userInfo,
-			categories
-		});
-	})	
-})
-
-//处理添加分类
-router.post('/add',(req,res)=>{
-
-	const { name,order } = req.body;
-	CategoryModel.findOne({name})
-	.then(category=>{
-		if(category){//有同名的存在
-			res.render("admin/error",{
-				userInfo:req.userInfo,
-				message:'添加分类失败,分类已存在'
-			})
-		}else{
-			CategoryModel.insertMany({name,order})
-			.then(category=>{
-				res.render('admin/success',{
-					userInfo:req.userInfo,
-					message:'添加分类成功',
-					url:'/category'
-				})
-			})
-			.catch(err=>{
-				throw err;
-			})			
-		}
+router.post("/add",(req,res)=>{
+	const { category,title,intro,content } = req.body;
+	ArticleModel.insertMany({
+		title,
+		category,
+		intro,
+		content,
+		user:req.userInfo._id
 	})
-	.catch(err=>{
-		res.render("admin/error",{
+	.then(article=>{
+		res.render('admin/success',{
 			userInfo:req.userInfo,
-			message:'数据库错误,请稍后再试'
+			message:'添加文章成功',
+			url:'/article'
 		})
 	})
-		
+	.catch(err=>{
+		res.render('admin/error',{
+			userInfo:req.userInfo,
+			message:"添加文章失败,操作数据库错误,稍后再试一试"
+		})
+	})
 })
 
 //显示编辑页面
