@@ -22,12 +22,13 @@ router.get('/',(req,res)=>{
 		query:{},
 		projection:'-__v',
 		sort:{_id:-1}
+		//populates:[{path:"user",select:'username'},{path:'category',select:'name'}]
 	};
 	pagination(options)
 	.then(data=>{
 		res.render('admin/article_list',{
 			userInfo:req.userInfo,
-			categories:data.docs,
+			articles:data.docs,
 			page:data.page,
 			list:data.list,
 			pages:data.pages,
@@ -37,8 +38,21 @@ router.get('/',(req,res)=>{
 })
 
 //显示添加文章页面
+router.get("/add",(req,res)=>{
+	CategoryModel.find({},'name')
+	.sort({order:-1})
+	.then(categories=>{
+		res.render('admin/article_add',{
+			userInfo:req.userInfo,
+			categories
+		})
+	})
+})
+
+//处理添加文章
 router.post("/add",(req,res)=>{
 	const { category,title,intro,content } = req.body;
+	console.log(req.body.title);
 	ArticleModel.insertMany({
 		title,
 		category,
@@ -61,17 +75,6 @@ router.post("/add",(req,res)=>{
 	})
 })
 
-//显示编辑页面
-router.get('/edit/:id',(req,res)=>{
-	const { id } = req.params
-	CategoryModel.findById(id)
-	.then(category=>{
-		res.render("admin/category_add_edit",{
-			userInfo:req.userInfo,
-			category
-		})
-	})
-})
 
 //处理编辑
 router.post('/edit',(req,res)=>{

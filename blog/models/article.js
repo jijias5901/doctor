@@ -8,6 +8,9 @@ const ArticleSchema = new mongoose.Schema({
 	intro:{
 		type:String
 	},
+	title:{
+		type:String
+	},
 	content:{
 		type:String
 	},
