@@ -7,6 +7,7 @@
 
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
+import { actionCreator } from './store'
 import axios from 'axios';
 
 import {
@@ -24,26 +25,7 @@ class NormalLoginForm extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
 		if (!err) {
-			this.setState(()=>({isFething:true}))
-			axios({
-				method:'post',
-				url:'http://127.0.0.1:3000/admin/login',
-				data:values
-			})
-			.then(result=>{
-				if(result.data.code == 0){//登录成功
-					//跳转后台首页
-					window.location.href = '/';
-				}else if(result.data.code == 1){
-					message.error(result.data.message);
-				}
-			})
-			.catch(err=>{
-				message.error('网络请求失败,请稍后再试');
-			})
-			.finally(()=>{
-				this.setState(()=>({isFething:false}))
-			})
+			this.props.handleLogin(values);
 		}
     });
   }
@@ -72,7 +54,7 @@ class NormalLoginForm extends Component {
 					type="primary" 
 					onClick={this.handleSubmit} 
 					className="login-form-button"
-					loading={this.props.isFething}
+					loading={this.props.isFetching}
 				>
 			    登录
 			  </Button>
@@ -87,13 +69,16 @@ const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLogin
 
 const mapStateToProps = (state)=>{
 	return {
-		isFething:state.get('login').get('isFething')
+		isFetching:state.get('login').get('isFetching')
 	}
 }
 
 const mapDispatchToProps = (dispatch)=>{
 	return {
-
+		handleLogin:(values)=>{
+			const action = actionCreator.getLoginAction(values);
+			dispatch(action);
+		}
 	}
 }
 
