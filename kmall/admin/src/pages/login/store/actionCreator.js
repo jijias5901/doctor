@@ -5,9 +5,9 @@
 * @Last Modified time: 2019-04-12 20:09:18
 */
 import * as types from './actionTypes.js'
-import axios from 'axios';
 import { message } from 'antd';
 
+import { request } from 'util';
 
 const getLoginRequestAction = ()=>{
 	return {
@@ -24,6 +24,8 @@ const getLoginDonetAction = ()=>{
 export const getLoginAction = (values)=>{
 	return (dispatch)=>{
 		dispatch(getLoginRequestAction());
+		request()
+		/*
 		axios({
 			method:'post',
 			url:'http://127.0.0.1:3000/admin/login',
@@ -43,6 +45,7 @@ export const getLoginAction = (values)=>{
 		.finally(()=>{
 			dispatch(getLoginDonetAction());
 		})
+		*/
 	}
 }
 

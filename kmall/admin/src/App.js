@@ -8,8 +8,8 @@
 import React,{ Component,Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import Login from './pages/login';
-import Home from './pages/Home';
+import Login from 'pages/login';
+import Home from 'pages/Home';
 
 import './App.css'
 
