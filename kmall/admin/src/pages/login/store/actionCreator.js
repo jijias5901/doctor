@@ -4,10 +4,11 @@
 * @Last Modified by:   TomChen
 * @Last Modified time: 2019-04-12 20:09:18
 */
-import * as types from './actionTypes.js'
+import * as types from './actionTypes.js';
 import { message } from 'antd';
+import { request,setUserName } from 'util';
+import { ADMIN_LOGIN } from 'api';
 
-import { request } from 'util';
 
 const getLoginRequestAction = ()=>{
 	return {
@@ -24,19 +25,19 @@ const getLoginDonetAction = ()=>{
 export const getLoginAction = (values)=>{
 	return (dispatch)=>{
 		dispatch(getLoginRequestAction());
-		request()
-		/*
-		axios({
+		request({
 			method:'post',
-			url:'http://127.0.0.1:3000/admin/login',
+			url:ADMIN_LOGIN,
 			data:values
 		})
 		.then(result=>{
-			if(result.data.code == 0){//登录成功
+			if(result.code == 0){//登录成功
+				//把用户名保存到本地
+				setUserName(result.data.username);
 				//跳转后台首页
 				window.location.href = '/';
-			}else if(result.data.code == 1){
-				message.error(result.data.message);
+			}else if(result.code == 1){
+				message.error(result.message);
 			}
 		})
 		.catch(err=>{
@@ -45,7 +46,6 @@ export const getLoginAction = (values)=>{
 		.finally(()=>{
 			dispatch(getLoginDonetAction());
 		})
-		*/
 	}
 }
 
