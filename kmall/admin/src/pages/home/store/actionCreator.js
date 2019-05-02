@@ -4,7 +4,7 @@
 * @Last Modified by:   TomChen
 * @Last Modified time: 2019-04-12 20:09:18
 */
-import * as types from './actionTypes.js'
+import * as types from './actionTypes.js';
 import axios from 'axios';
 export const getAddItemAction = ()=>{
 	return {

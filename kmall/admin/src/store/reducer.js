@@ -5,9 +5,11 @@
 * @Last Modified time: 2019-04-12 20:53:38
 */
 // import { combineReducers } from 'redux'
-import { combineReducers } from 'redux-immutable'
-import { reducer as loginReducer  } from 'pages/login/store'
+import { combineReducers } from 'redux-immutable';
+import { reducer as loginReducer  } from 'pages/login/store';
+import { reducer as homeReducer  } from 'pages/home/store';
 
 export default combineReducers({
-	login:loginReducer
+	login:loginReducer,
+	home:homeReducer
 })
