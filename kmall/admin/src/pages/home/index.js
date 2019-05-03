@@ -2,22 +2,28 @@ import React,{ Component } from 'react';
 import { Card, Col, Row } from 'antd';
 import { connect } from 'react-redux';
 
+import { actionCreator } from './store'
+
 import Layout from 'common/layout';
 
 class Home extends Component{ 
+	componentDidMount(){
+		this.props.handleCount();
+	}
 	render(){
+		const { usernum,productnum,ordernum } = this.props;
 		return (
 			<div className='Home'>
 				<Layout>
 					<Row gutter={16}>
 						<Col span={8}>
-							<Card title="用户数量" bordered={false}>{this.props.usernum}</Card>
+							<Card title="用户数量" bordered={false}>{usernum}</Card>
 						</Col>
 						<Col span={8}>
-							<Card title="商品数量" bordered={false}>{this.props.productnum}</Card>
+							<Card title="商品数量" bordered={false}>{productnum}</Card>
 						</Col>
 						<Col span={8}>
-							<Card title="订单数量" bordered={false}>{this.props.ordernum}</Card>
+							<Card title="订单数量" bordered={false}>{ordernum}</Card>
 						</Col>
 					</Row>
 				</Layout>
@@ -28,14 +34,17 @@ class Home extends Component{
 
 const mapStateToProps = (state)=>{
 	return {
-		usernum:
-		productnum:
-		ordernum:
+		usernum:state.get('home').get('usernum'),
+		productnum:state.get('home').get('productnum'),
+		ordernum:state.get('home').get('ordernum')
 	}
 }
 const mapDispatchToProps = (dispatch)=>{
 	return {
-
+		handleCount:()=>{
+			const action = actionCreator.getCountAction();
+			dispatch(action);
+		}
 	}
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Home);
