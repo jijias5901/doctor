@@ -7,7 +7,7 @@ import { actionCreator } from './store'
 import Layout from 'common/layout';
 
 class Home extends Component{ 
-	componentDidMount(){
+	componentDidMount(){ 
 		this.props.handleCount();
 	}
 	render(){
