@@ -1,31 +1,28 @@
 <template>
-	<div class="Item">
+	<div class="Footer">
 		<input type="checkbox">
-		<span>{{todo.task}}</span>
-		<button>删除</button>
+		<span>1/5</span>
+		<button>删除所有完成的任务</button>
 	</div>
 </template>
 <script>
 	export default {
-		name:'Item',
-		props:{
-			todo:Object
-		}
+		name:'Footer'
 	}
 </script>
 <style scoped>
-	.Item{
+	.Footer{
 		width: 100%;
 		line-height: 40px;
-		border: 1px dashed #ccc;
+		margin-top: 20px;
 	}
-	.Item input{
+	.Footer input{
 		float: left;
 		margin-top: 14px;
 		margin-right: 10px;
 	}
-	.Item button{
+	.Footer button{
 		float: right;
 		margin-top: 14px;
-	}	
+	}		
 </style>
