@@ -8,6 +8,7 @@
 	
 </body>
 <script>
+	//1.new Set()方法
 	let arr1 = [11,22,33,44,55,22,11];
 
 	let s = new Set(arr1);
@@ -15,5 +16,19 @@
 
 	let arr2 = [...s];
 	console.log(arr2);
+
+	console.log(new Array())
+	//2.定义一个新数组 遍历数组 值不在新数组中push进去
+	function fn(arr){
+		var str = [];
+		for(var i = 0;i<arr.length;i++){
+			if(str.indexOf(arr[i]) == -1){
+				str.push([arr[i]])
+			}
+		}
+		return str;
+	}
+
+	console.log(fn(arr1));
 </script>
 </html>

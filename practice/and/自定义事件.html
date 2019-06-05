@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 9px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box1">
+		<div class="box2" id="box2"></div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var ev = new Event('test');
+	oBox1.onclick = function(){
+		oBox2.addEventListener('test',function(){
+			console.log('aa');
+		})
+		oBox2.dispatchEvent(ev);
+	}
+	
+	
+</script>
+</html>
