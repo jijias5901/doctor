@@ -115,7 +115,7 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps = (dispatch)=>{
 	return {
 		handleLogin:(values)=>{
-			const action = actionCreator.getLoginAction();
+			const action = actionCreator.getLoginAction(values);
 			dispatch(action);
 		}
 	}

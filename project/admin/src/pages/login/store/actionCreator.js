@@ -6,7 +6,10 @@
 */
 import * as types from './actionTypes.js';
 import axios from 'axios';
+
 import { message } from "antd";
+import { request,setUserName } from 'util';
+import { ADMIN_LOGIN } from 'api';
 
 const getLoginRequestAction = ()=>{
 	return {
@@ -23,17 +26,20 @@ const getLoginDoneAction = ()=>{
 export const getLoginAction = (values)=>{
 	return (dispatch)=>{
 		dispatch(getLoginRequestAction());
-		axios({
+		
+    	request({
     		method:'post',
-    		url:'http://127.0.0.1:3000/admin/login',
+    		url:ADMIN_LOGIN,
     		data:values
     	})
     	.then(result=>{
-    		if(result.data.code == 0){//登录成功
+    		if(result.code == 0){//登录成功
+    			//保存用户名到本地
+    			setUserName(result.data.username);
     			//跳转到后台首页
     			window.location.href = '/';
-    		}else if(result.data.code == 1){
-    			message.error(result.data.message);
+    		}else if(result.code == 1){
+    			message.error(result.message);
     		}
     	})
     	.catch(err=>{
